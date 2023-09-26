@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row pt-5 py-5">
 				<div class="container pb-5">
-					<span class="display-3 text-white">Student Register</span>
+					<span class="display-3 text-white">Register Internship Session</span>
 				</div>
 				<div class="card p-5 mx-auto w-50">
 					<span class="h4">Student Register</span>
@@ -29,12 +29,31 @@
 							<input class="d-block w-100 form-control" type="text" name="tb_name" id="tb_name" placeholder="Enter Name" required />
 						</div>
 						<div class="mb-4">
+							<label class="d-block mb-1" for="tb_phoneNo">Phone No.</label>
+							<input class="d-block w-100 form-control" type="text" name="tb_phoneNo" id="tb_phoneNo" placeholder="012-34567890" required />
+						</div>
+						<div class="mb-4">
+							<label class="d-block mb-1" for="ddl_gender">Gender</label>
+							<select class="d-block w-100 form-select" requried name="ddl_gender" id="ddl_gender">
+								<option value="M">Male</option>
+								<option value="F">Female</option>
+							</select>
+						</div>
+						<div class="mb-4">
 							<label class="d-block mb-1" for="ddl_programme">Programme</label>
 							<select class="d-block w-100 form-select" requried name="ddl_programme" id="ddl_programme">
 								<option value="DCS">Diploma In Computer Science</option>
 								<option value="DIT">Diploma In Information Technology</option>
 								<option value="RDS">Degree In Data Science</option>
 								<option value="RSW">Degree In Software Engineering</option>
+							</select>
+						</div>
+						<div class="mb-4">
+							<label class="d-block mb-1" for="ddl_session">Session</label>
+							<select class="d-block w-100 form-select" requried name="ddl_session" id="ddl_session">
+								<option value="202310">October 2023</option>
+								<option value="202401">January 2024</option>
+								<option value="202404">April 2024</option>
 							</select>
 						</div>
 						<div class="mb-4">

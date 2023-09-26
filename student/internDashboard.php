@@ -12,6 +12,7 @@
 		/>
 	</head>
 	<body>
+		<!--=========================================================================== nav bar ===========================================================================-->
 		<nav class="navbar navbar-dark bg-dark text-light p-3">
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
 			<div>
@@ -19,5 +20,65 @@
 				<a href="../index.php" class="mx-2 btn btn-danger">Log Out</a>
 			</div>
 		</nav>
+		<!--=========================================================================== nav bar ===========================================================================-->
+		<div class="content p-3">
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">Upload required documents</span>
+				<div class="card mt-3 p-3">
+					<form action="">
+						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
+						<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
+					</form>	
+				</div>
+			</div>
+			<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">Submit Monthly Report 1</span>
+				<div class="card mt-3 p-3">
+					<form action="">
+						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
+						<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
+					</form>	
+				</div>
+			</div>
+			<!--=========================================================================== MONTHLY REPORT 2 ===========================================================================-->
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">Submit Monthly Report 2</span>
+				<div class="card mt-3 p-3">
+					<form action="">
+						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
+						<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
+					</form>	
+				</div>
+			</div>
+			<!--=========================================================================== MONTHLY REPORT 3 ===========================================================================-->
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">Submit Monthly Report 3</span>
+				<div class="card mt-3 p-3">
+					<form action="">
+						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
+						<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
+					</form>	
+				</div>
+			</div>
+			<!--=========================================================================== FNAL REPORT ===========================================================================-->
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">Submit Final Report</span>
+				<div class="card mt-3 p-3">
+					<form action="">
+						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
+						<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
+					</form>	
+				</div>
+			</div>
+			<!--=========================================================================== FNAL REPORT ===========================================================================-->
+			<div class="w-50 mx-auto">
+				<span class="h4 d-block my-3">View Grade</span>
+				<div class="card mt-3 p-3">
+					<span class="h5">Congratulations on completion of internship</span>
+					<span class="h6">Your Grade : </span>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
