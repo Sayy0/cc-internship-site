@@ -19,7 +19,7 @@
 				</div>
 				<div class="card p-5 mx-auto w-50">
 					<span class="h4">Login</span>
-					<form class="d-block m-3" action="./internshipSubmission.html">
+					<form class="d-block m-3" action="./student/internDashboard.php" method="POST">
 						<div class="mb-4">
 							<label class="d-block mb-1" for="tb_email">E-mail</label>
 							<input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" placeholder="Enter Email" required />
@@ -35,7 +35,7 @@
 							<a href="./staffLogin.php" class="w-25 text-end">Staff Login</a>
 						</div>
 						<div class="row justify-content-end mt-4">
-							<input class="btn btn-primary" type="button" value="Login" />
+							<input class="btn btn-primary" type="submit" value="Login" />
 						</div>
 					</form>
 				</div>

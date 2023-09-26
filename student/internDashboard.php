@@ -12,11 +12,12 @@
 		/>
 	</head>
 	<body>
-		<h1>Hello</h1>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-			crossorigin="anonymous"
-		></script>
+		<nav class="navbar navbar-dark bg-dark text-light p-3">
+			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
+			<div>
+				<a href="./studentProfile.php" class="mx-2 btn btn-primary">Profile</a>
+				<a href="../index.php" class="mx-2 btn btn-danger">Log Out</a>
+			</div>
+		</nav>
 	</body>
 </html>
