@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($insertQuery) === TRUE) {
             // Registration successful, redirect to the registration page
-            header("Location: index.php");
+            header("Location: studentLogin.php");
             exit();
         } else {
             $errMsg= "Error: " . $conn->error;
