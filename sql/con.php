@@ -2,11 +2,11 @@
     $hostname = 'localhost';
     $username= 'root';
     $password= '';
-    $database= 'askldfalsk';
+    $database= 'interndb';
 
-    $conn = new mysqli('localhost', 'root', '', 'aaklsdfjlaskj');
+//    $conn = new mysqli('localhost', 'root', '', 'interndb');
 
-//    $conn = new mysqli($hostname, $username, $password, $database);
+    $conn = new mysqli($hostname, $username, $password, $database);
 
 
     if ($conn->connect_error) {

@@ -1,14 +1,3 @@
-<?php 
-// Start a session to access the error message
-session_start();
-
-// Display the error message as an alert using JavaScript
-if (isset($_SESSION['errMsg'])) {
-    echo "<script>alert('{$_SESSION['error']}');</script>";
-    // Clear the error message from the session
-    unset($_SESSION['errMsg']);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -30,7 +19,7 @@ if (isset($_SESSION['errMsg'])) {
 				</div>
 				<div class="card p-5 mx-auto w-50">
 					<span class="h4">Student Register</span>
-					<form class="d-block m-3" method="POST" action="./registerProcess.php">
+					<form class="d-block m-3" method="post" action="registerProcess.php">
 						<div class="mb-4">
 							<label class="d-block mb-1" for="tb_email">E-mail</label>
 							<input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" placeholder="Enter Email" required />
@@ -86,4 +75,12 @@ if (isset($_SESSION['errMsg'])) {
 			</div>
 		</div>
 	</body>
+    <script>
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+    </script>
 </html>

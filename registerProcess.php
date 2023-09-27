@@ -14,12 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
 
 
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }    
     $checkEmail = "SELECT * FROM Student WHERE email = '" . $email . "'";
 
     $checkEmailResult = $conn->query($checkEmail);
 
     if($checkEmailResult->num_rows > 0){
-        $errMsg = "Email already registered, please use another email";        
+        $errMsg = "Email already registered, please use another email";
+        header("Location: ./register.php?error=" . urlencode($errMsg));
+        exit();
     }
     else{
         $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, password) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$password')";        
@@ -30,14 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $errMsg= "Error: " . $conn->error;
-            header("Location : ./register.php");
+            header("Location: ./register.php?error=" . urlencode($errMsg));
+            exit();
+            
         }
     }
     $conn->close();
 
 }
 
-session_start();
-$_SESSION['error'] = $errMsg;
 
 ?>
