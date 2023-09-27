@@ -21,10 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($checkEmailResult->num_rows > 0){
         $row = $checkEmailResult->fetch_assoc();
         $dbPassword = $row["studentPassword"];
+        $dbEmail = $row["email"];
         
+        echo("Email : " . $email);
+        echo("Pw: " . $pw);
+
+        echo("dbEmail : " . $dbEmail);
+        echo("dbPw: " . $dbPassword);
 
         if($dbPassword === $pw){
-            echo($dbPassword);
             header("Location : ./student/internDashboard.php");
         }
     }
