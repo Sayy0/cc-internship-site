@@ -1,8 +1,9 @@
 <?php 
+session_start();
 $id = $_SESSION['userid'];
 
 echo $id;
-echo "<script>document.getElementById('hiddenField').innerHTML = $id;</script>"
+echo "<script>document.getElementById('hiddenField').innerHTML = '$id';</script>"
 ?>
 <!DOCTYPE html>
 <html lang="en">

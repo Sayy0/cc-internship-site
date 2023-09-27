@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($dbPassword === $pw){
             session_start();
             $_SESSION['userid'] = $dbId;
-            header("Location: ./student/internDashboard.php?");
+            header("Location: ./student/internDashboard.php");
             exit();
         }
         else{
