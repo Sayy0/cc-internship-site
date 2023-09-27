@@ -17,7 +17,7 @@ echo "<script>document.getElementById('hiddenField').innerHTML = currentId;</scr
 		/>
 	</head>
 	<body>
-		<span id="hiddenField" hidden></span>
+		<span id="hiddenField"></span>
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<nav class="navbar navbar-dark bg-dark text-light p-3">
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
