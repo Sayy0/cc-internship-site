@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($checkEmailResult->num_rows > 0){
         $errMsg = "Email already registered, please use another email";
-        header("Location: ./register.php?error=" . urlencode($errMsg));
+        header("Location: register.php?error=" . urlencode($errMsg));
         exit();
     }
     else{
@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($insertQuery) === TRUE) {
             // Registration successful, redirect to the registration page
-            header("Location: ./index.php");
+            header("Location: index.php");
             exit();
         } else {
             $errMsg= "Error: " . $conn->error;
-            header("Location: ./register.php?error=" . urlencode($errMsg));
+            header("Location: register.php?error=" . urlencode($errMsg));
             exit();
             
         }
