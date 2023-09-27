@@ -1,10 +1,3 @@
-<?php 
-session_start();
-$id = $_SESSION['userid'];
-
-echo $id;
-echo "<script>document.getElementById('test3').innerHTML = '$id';</script>"
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -19,7 +12,6 @@ echo "<script>document.getElementById('test3').innerHTML = '$id';</script>"
 		/>
 	</head>
 	<body>
-		<span id="hiddenField"></span>
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<nav class="navbar navbar-dark bg-dark text-light p-3">
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
@@ -99,3 +91,10 @@ echo "<script>document.getElementById('test3').innerHTML = '$id';</script>"
         }
     </script>
 </html>
+
+<?php 
+session_start();
+$id = $_SESSION['userid'];
+
+echo $id;
+?>
