@@ -35,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $getEmail = $conn->query($getEmail);
             $row = $getEmail->fetch_assoc();
             $studentId = $row["studentId"];
-            echo $studentId;
+            $test2 = 1234;
 
-            $createInternQuery = "INSERT INTO Internship (studentId, indemnityStatus, parentsAckStatus, acceptanceLtrStatus, report1Status, report2Status, report3Status, findalReportStatus) VALUES ('$studentId', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty')";
+            $createInternQuery = "INSERT INTO Internship (studentId, indemnityStatus, parentsAckStatus, acceptanceLtrStatus, report1Status, report2Status, report3Status, findalReportStatus) VALUES ('$studentId', '$test2', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty')";
             if($conn->query($createInternQuery) === TRUE){
                 header("Location: studentLogin.php");
                 exit();
