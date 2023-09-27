@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = $_POST["ddl_gender"];
     $programme = $_POST["ddl_programme"];
     $session = $_POST["ddl_session"];
-    $password = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
+    $pw = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
 
     require("./sql/connectDB.php");
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     else{
-        $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, password) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$password')";        
+        $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, studentPassword) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$pw')";        
 
         if ($conn->query($insertQuery) === TRUE) {
             // Registration successful, redirect to the registration page
