@@ -1,3 +1,14 @@
+<?php 
+// Start a session to access the error message
+session_start();
+
+// Display the error message as an alert using JavaScript
+if (isset($_SESSION['errMsg'])) {
+    echo "<script>alert('{$_SESSION['error']}');</script>";
+    // Clear the error message from the session
+    unset($_SESSION['errMsg']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -19,7 +30,7 @@
 				</div>
 				<div class="card p-5 mx-auto w-50">
 					<span class="h4">Student Register</span>
-					<form class="d-block m-3" action="./internshipSubmission.html">
+					<form class="d-block m-3" method="POST" action="./registerProcess.php">
 						<div class="mb-4">
 							<label class="d-block mb-1" for="tb_email">E-mail</label>
 							<input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" placeholder="Enter Email" required />
@@ -68,7 +79,7 @@
 							<a href="./index.php" class="w-25 text-end">Student Login</a>
 						</div>
 						<div class="row justify-content-end mt-4">
-							<input class="btn btn-primary" type="button" value="Register" />
+							<input class="btn btn-primary" type="submit" value="Register" />
 						</div>
 					</form>
 				</div>
