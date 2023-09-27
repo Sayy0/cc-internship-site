@@ -1,7 +1,7 @@
 <?php 
 $id = $_SESSION['userid'];
 
-echo "document.getElementById('hiddenField').innerHTML = currentId;"
+echo "<script>document.getElementById('hiddenField').innerHTML = currentId;</script>"
 ?>
 <!DOCTYPE html>
 <html lang="en">
