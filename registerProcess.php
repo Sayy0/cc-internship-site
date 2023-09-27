@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, studentPassword) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$pw')";        
 
         if ($conn->query($insertQuery) === TRUE) {
-            $getEmail = $conn->query($getEmail);
+            $getEmail = $conn->query($checkEmail);
             $row = $getEmail->fetch_assoc();
             $studentId = $row["studentId"];
             $test2 = 1234;
