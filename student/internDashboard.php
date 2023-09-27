@@ -1,7 +1,3 @@
-<?php 
-$id = $_GET('id');
-echo($id);
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -96,3 +92,8 @@ echo($id);
         }
     </script>
 </html>
+
+<?php 
+$id = $_GET['id'];
+echo($id);
+?>
