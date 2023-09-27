@@ -5,6 +5,7 @@
     $database= 'interndb';
 
 //    $conn = new mysqli('localhost', 'root', '', 'interndb');
+//
 
     $conn = new mysqli($hostname, $username, $password, $database);
 
