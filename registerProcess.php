@@ -1,5 +1,5 @@
 <?php 
-include("./sql/con.php");
+include("./sql/connectDB.php");
 
 $errMsg = "";
 
