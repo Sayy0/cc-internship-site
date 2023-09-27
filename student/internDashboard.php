@@ -87,7 +87,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('id')) {
 			const currentId = decodeURIComponent(urlParams.get('id'));
-			document.getElementById(hiddenField).innerHTML = currentId;
+			document.getElementById('hiddenField').innerHTML = currentId;
 
         }
     </script>
