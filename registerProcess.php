@@ -1,5 +1,4 @@
 <?php 
-include("./sql/connectDB.php");
 
 $errMsg = "";
 
@@ -12,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $programme = $_POST["ddl_programme"];
     $session = $_POST["ddl_session"];
     $password = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
+
+    require("./sql/connectDB.php");
 
 
     if ($conn->connect_error) {
