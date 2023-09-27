@@ -26,7 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
         if($dbPassword === $pw){
-            header("Location: ./student/internDashboard.php?id=" . urlencode($dbId));
+            session_start();
+            $_SESSION['userid'] = $dbId;
+            header("Location: ./student/internDashboard.php?");
+            exit();
         }
         else{
             $errMsg = "Invalid email or password.";

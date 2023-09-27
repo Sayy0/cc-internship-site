@@ -1,3 +1,8 @@
+<?php 
+$id = $_SESSION['userid'];
+
+echo "document.getElementById('hiddenField').innerHTML = currentId;"
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -92,8 +97,3 @@
         }
     </script>
 </html>
-
-<?php 
-$id = $_GET['id'];
-echo($id);
-?>
