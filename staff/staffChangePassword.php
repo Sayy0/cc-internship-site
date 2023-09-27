@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document Submission</title>
+		<title>Change Password</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -30,25 +31,28 @@
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span class="h4 d-block my-3">User Profile</span>
-				<div class="card mt-3 p-3">
-                    <div class="row">
-						<div class="mb-4">
-							<img class="w-25" src="./photos/profilepic.jpg" alt="">
-						</div>
-                        <div class="mb-4">
-                            <label class="d-block mb-1" for="tb_email">E-mail</label>
-                            <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" disabled required />
-                        </div>
-						<div class="mb-4">
-							<label class="d-block mb-1" for="tb_name">Name</label>
-							<input class="d-block w-100 form-control" type="text" name="tb_name" id="tb_name" placeholder="Enter Name" required disabled value="Cry Cry Cry"/>
-						</div>
-                        <div class="">
-                            <a href="./staffEditProfile.php" class="btn btn-secondary w-25">Edit</a>
-                            <a href="./staffChangePassword.php" class="btn btn-warning w-25">Change Password</a>
+                <form action="">
+                    <div class="card mt-3 p-3">
+                        <div class="row">
+                            <div class="mb-4 col">
+                                <label class="d-block mb-1" for="tb_opw">Old Password</label>
+                                <input class="d-block w-100 form-control" type="password" name="tb_opw" id="tb_opw" placeholder="Current Password" required />
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1" for="tb_npw">New Password</label>
+                                <input class="d-block w-100 form-control" type="password" name="tb_npw" id="tb_npw" placeholder="New Password" required />
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1" for="tb_cpw">Confirm Password</label>
+                                <input class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
+                            </div>
+                            <div class="">
+                                <a href="./studentProfile.php" class="btn btn-danger w-25">Cancel</a>
+                                <input type="submit" value="Save" class="btn btn-success w-25">
+                            </div>
                         </div>
                     </div>
-				</div>
+                </form>
 			</div>
 		</div>
 	</body>

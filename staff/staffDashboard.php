@@ -18,8 +18,8 @@
 			<a href="./staffDashboard.php" class="h4 text-decoration-none">Staff Dashboard</a>
             <div class="">
                 <ul class="nav-bar-nav list-group list-group-horizontal list-unstyled">
-                    <li class="mx-2 nav-item"><a href="" class="text-decoration-none text-light">Current Session</a></li>
-                    <li class="mx-2 nav-item"><a href="" class="text-decoration-none text-light">Upcoming Session</a></li>
+                    <li class="mx-2 nav-item"><a href="./staffDashboard.php" class="text-decoration-none text-light">Current Session</a></li>
+                    <li class="mx-2 nav-item"><a href="./staffUpcomingSession.php" class="text-decoration-none text-light">Upcoming Session</a></li>
                 </ul>
             </div>
 			<div>
@@ -28,7 +28,54 @@
 			</div>
 		</nav>
 		<!--=========================================================================== nav bar ===========================================================================-->
+
 		<div class="content p-3">
+			<div class="w-75 mx-auto">
+                <span class="h3 d-block py-4">Current Session</span>
+				<table class="table table-striped table-bordered">
+					<thead class="table-dark text-light">
+						<tr>
+							<th>Student ID</th>
+							<th>Name</th>
+							<th>Report 1</th>
+							<th>Report 2</th>
+							<th>Report 3</th>
+							<th>Final Report</th>
+							<th>Grade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2206976</td>
+							<td>Tan Wei Jian</td>
+							<td><a href="">View Report 1</a></td>
+							<td><a href="">View Report 2</a></td>
+							<td><a href="">View Report 3</a></td>
+							<td><a href="">View Final Report</a></td>
+							<td class="text-center"><span>A</span></td>
+						</tr>
+						<tr>
+							<td>2206952</td>
+							<td>Chung Chee You</td>
+							<td><a href="">View Report 1</a></td>
+							<td><span class="text-warning">Not submitted</span></td>
+							<td><span class="text-warning">Not submitted</span></td>
+							<td><span class="text-warning">Not submitted</span></td>
+							<td class="text-center">
+								<select class="d-block w-100 form-select mb-2" requried name="ddl_grade" id="ddl_grade">
+									<option value="A">A</option>
+									<option value="A-">A-</option>
+									<option value="B">B</option>
+									<option value="B">B-</option>
+									<option value="C">C</option>
+									<option value="C-">C-</option>
+									<option value="F">Fail</option>
+								</select>
+								<a class="btn btn-primary" href="">Grade</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>

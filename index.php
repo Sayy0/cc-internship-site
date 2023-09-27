@@ -28,11 +28,11 @@
 							<label class="d-block mb-1" for="tb_pw">Password</label>
 							<input class="d-block w-100 form-control" type="password" name="tb_pw" id="tb_pw" required placeholder="Password" />
 						</div>
-						<div class="row justify-content-end mt-1">
-							<a href="./register.php" class="w-25 text-end">Register Session</a>
+						<div class="row justify-content-end mt-1 ">
+							<a href="./register.php" class="text-end">Register Session</a>
 						</div>
 						<div class="row justify-content-end mt-1">
-							<a href="./staffLogin.php" class="w-25 text-end">Staff Login</a>
+							<a href="./staffLogin.php" class="text-end">Staff Login</a>
 						</div>
 						<div class="row justify-content-end mt-4">
 							<input class="btn btn-primary" type="submit" value="Login" />

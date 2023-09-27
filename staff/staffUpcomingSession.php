@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -27,28 +29,40 @@
 			</div>
 		</nav>
 		<!--=========================================================================== nav bar ===========================================================================-->
+
 		<div class="content p-3">
-			<div class="w-50 mx-auto">
-				<span class="h4 d-block my-3">User Profile</span>
-				<div class="card mt-3 p-3">
-                    <div class="row">
-						<div class="mb-4">
-							<img class="w-25" src="./photos/profilepic.jpg" alt="">
-						</div>
-                        <div class="mb-4">
-                            <label class="d-block mb-1" for="tb_email">E-mail</label>
-                            <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" disabled required />
-                        </div>
-						<div class="mb-4">
-							<label class="d-block mb-1" for="tb_name">Name</label>
-							<input class="d-block w-100 form-control" type="text" name="tb_name" id="tb_name" placeholder="Enter Name" required disabled value="Cry Cry Cry"/>
-						</div>
-                        <div class="">
-                            <a href="./staffEditProfile.php" class="btn btn-secondary w-25">Edit</a>
-                            <a href="./staffChangePassword.php" class="btn btn-warning w-25">Change Password</a>
-                        </div>
-                    </div>
-				</div>
+			<div class="w-75 mx-auto">
+                <span class="h3 d-block py-4">Upcoming Session</span>
+				<table class="table table-striped table-bordered">
+					<thead class="table-dark text-light">
+						<tr>
+							<th>Student ID</th>
+							<th>Name</th>
+							<th>Indemnity</th>
+							<th>Parents Acknowledgement</th>
+							<th>Acceptance Letter</th>
+							<th>Accept</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2206963</td>
+							<td>Lee Xi Qian</td>
+							<td><a href="">View Document</a></td>
+							<td><a href="">View Document</a></td>
+							<td><a href="">View Document</a></td>
+							<td class="text-center"><a class="btn btn-success" href="">Accept</a></td>
+						</tr>
+						<tr>
+							<td>2206977</td>
+							<td>Tneoh Bee Lun</td>
+							<td><a href="">View Document</a></td>
+							<td><a href="">View Document</a></td>
+							<td><a href="">View Document</a></td>
+							<td class="text-center"><span class="btn btn-outline-success" href="">Accepted</span></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</body>

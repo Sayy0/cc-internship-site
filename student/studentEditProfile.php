@@ -28,8 +28,11 @@
                 <form action="">
                     <div class="card mt-3 p-3">
                         <div class="row">
-                            <div class="mb-4 col">
+                            <div class="mb-4">
                                 <img class="w-25" src="./photos/profilepic.jpg" alt="">
+                                <input class="d-block" type="file" id="input_submitFile" name="filename" required>
+                            </div>
+                            <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_email">E-mail</label>
                                 <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" required />
                             </div>

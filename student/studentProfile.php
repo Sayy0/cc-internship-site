@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document Submission</title>
+		<title>Student Profile</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -27,8 +27,10 @@
 				<span class="h4 d-block my-3">User Profile</span>
 				<div class="card mt-3 p-3">
                     <div class="row">
-                        <div class="mb-4 col">
-                            <img class="w-25" src="./photos/profilepic.jpg" alt="">
+						<div class="mb-4">
+							<img class="w-25" src="./photos/profilepic.jpg" alt="">
+						</div>
+                        <div class="mb-4">
                             <label class="d-block mb-1" for="tb_email">E-mail</label>
                             <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" disabled required />
                         </div>
@@ -66,6 +68,7 @@
 						</div>
                         <div class="">
                             <a href="./studentEditProfile.php" class="btn btn-secondary w-25">Edit</a>
+                            <a href="./studentChangePassword.php" class="btn btn-warning w-25">Change Password</a>
                         </div>
                     </div>
 				</div>
