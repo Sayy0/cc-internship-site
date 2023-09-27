@@ -1,3 +1,5 @@
+<?php 
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,6 +14,7 @@
 		/>
 	</head>
 	<body>
+		<span id="hiddenField" hidden></span>
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<nav class="navbar navbar-dark bg-dark text-light p-3">
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
@@ -81,4 +84,13 @@
 			</div>
 		</div>
 	</body>
+    <script>
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('id')) {
+			const currentId = decodeURIComponent(urlParams.get('id'));
+			document.getElementById(hiddenField).innerHTML = currentId;
+
+        }
+    </script>
 </html>

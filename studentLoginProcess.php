@@ -22,23 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $checkEmailResult->fetch_assoc();
         $dbPassword = $row["studentPassword"];
         $dbEmail = $row["email"];
+        $dbId = $row["studentId"];
         
-        echo("Email : " . $email);
-        echo("Pw: " . $pw);
-
-        echo("dbEmail : " . $dbEmail);
-        echo("dbPw: " . $dbPassword);
 
         if($dbPassword === $pw){
-            header("Location: ./student/internDashboard.php");
+            header("Location: ./student/internDashboard.php?id=" . urlencode($dbId));
         }
-        /*
         else{
             $errMsg = "Invalid email or password.";
             header("Location: studentLogin.php?error=" . urlencode($errMsg));
             exit();
         }
-        */
     }
     else{
         $errMsg = "Invalid email or password.";
