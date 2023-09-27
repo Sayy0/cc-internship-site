@@ -63,7 +63,7 @@ CREATE TABLE `Student` (
   `studentId` int(4) NOT NULL,
   `email` varchar(50) NOT NULL,
   `studentName` varchar(50) NOT NULL,
-  `phoneNo` varchar(10) NOT NULL,
+  `phoneNo` varchar(20) NOT NULL,
   `gender` varchar(1) NOT NULL,
   `programme` varchar(3) NOT NULL,
   `password` varchar(200) NOT NULL,
