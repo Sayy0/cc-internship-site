@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo("dbPw: " . $dbPassword);
 
         if($dbPassword === $pw){
-            header("Location : ./student/internDashboard.php");
+            header("Location: ./student/internDashboard.php");
         }
         /*
         else{
