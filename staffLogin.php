@@ -29,7 +29,7 @@
 							<input class="d-block w-100 form-control" type="password" name="tb_pw" id="tb_pw" required placeholder="Password" />
 						</div>
 						<div class="row justify-content-end mt-1">
-							<a href="./index.php" class="w-25 text-end">Student Login</a>
+							<a href="./studentLogin.php" class="w-25 text-end">Student Login</a>
 						</div>
 						<div class="row justify-content-end mt-4">
 							<input class="btn btn-primary" type="submit" value="Login" />
