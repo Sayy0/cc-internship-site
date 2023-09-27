@@ -1,4 +1,6 @@
 <?php 
+$id = $_GET('id');
+echo($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +37,7 @@
 				</div>
 			</div>
 			<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
-			<div class="w-50 mx-auto">
+			<div id="uploadMR1div" class="w-50 mx-auto">
 				<span class="h4 d-block my-3">Submit Monthly Report 1</span>
 				<div class="card mt-3 p-3">
 					<form action="">
