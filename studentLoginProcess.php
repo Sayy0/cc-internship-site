@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dbPassword = $row["studentPassword"];
 
         if($dbPassword === $pw){
-            header("Location : ./internDashboard.php");
+            header("Location : ./student/internDashboard.php");
         }
     }
     else{

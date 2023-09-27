@@ -18,7 +18,7 @@
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
 			<div>
 				<a href="./studentProfile.php" class="mx-2 btn btn-primary">Profile</a>
-				<a href="../index.php" class="mx-2 btn btn-danger">Log Out</a>
+				<a href="../studentLogin.php" class="mx-2 btn btn-danger">Log Out</a>
 			</div>
 		</nav>
 		<!--=========================================================================== nav bar ===========================================================================-->
