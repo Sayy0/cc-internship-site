@@ -32,9 +32,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, studentPassword) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$pw')";        
 
         if ($conn->query($insertQuery) === TRUE) {
+            $getEmail = $conn->query($getEmail);
+            $row = $getEmail->fetch_assoc();
+            $studentId = $row["studentId"];
+
+            $createInternQuery = "INSERT INTO Internship (studentId, indemnityStatus, parentsAckStatus, acceptanceLtrStatus, report1Status, report2Status, report3Status, findalReportStatus) VALUES ('$studentId', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty')";
+            if($conn->query($createInternQuery) === TRUE){
+                header("Location: studentLogin.php");
+                exit();
+            }
+            else{
+                $errMsg= "Error: " . $conn->error;
+                header("Location: register.php?error=" . urlencode($errMsg));
+                exit();
+            }
             // Registration successful, redirect to the registration page
-            header("Location: studentLogin.php");
-            exit();
         } else {
             $errMsg= "Error: " . $conn->error;
             header("Location: register.php?error=" . urlencode($errMsg));
