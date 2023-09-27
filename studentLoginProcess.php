@@ -6,7 +6,7 @@ $errMsg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the registration form
     $email = $_POST["tb_email"];
-    $pw = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
+    $pw = substr(hash('sha256', $_POST["tb_pw"]), 0, 50); // Hash the password
 
     require("./sql/connectDB.php");
 
@@ -32,6 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($dbPassword === $pw){
             header("Location : ./student/internDashboard.php");
         }
+        /*
+        else{
+            $errMsg = "Invalid email or password.";
+            header("Location: studentLogin.php?error=" . urlencode($errMsg));
+            exit();
+        }
+        */
     }
     else{
         $errMsg = "Invalid email or password.";

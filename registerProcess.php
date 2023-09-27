@@ -10,7 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = $_POST["ddl_gender"];
     $programme = $_POST["ddl_programme"];
     $session = $_POST["ddl_session"];
-    $pw = password_hash($_POST["tb_pw"], PASSWORD_DEFAULT); // Hash the password
+
+    $pw = substr(hash('sha256', $_POST["tb_pw"]), 0, 50); // Hash the password
 
     require("./sql/connectDB.php");
 
