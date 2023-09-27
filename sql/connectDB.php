@@ -1,8 +1,8 @@
 <?php
-    $hostname = 'localhost';
-    $username= 'root';
-    $password= '';
-    $database= 'interndb';
+    $hostname = 'ccdatabase.c47gv8tfypy1.us-east-1.rds.amazonaws.com';
+    $username= 'admin';
+    $password= 'internship123';
+    $database= 'InternshipDB';
 
 //    $conn = new mysqli('localhost', 'root', '', 'interndb');
 //
