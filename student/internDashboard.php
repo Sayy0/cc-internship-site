@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['userid'];
 
 echo $id;
-echo "<script>document.getElementById('hiddenField').innerHTML = '$id';</script>"
+echo "<script>document.getElementById('test3').innerHTML = '$id';</script>"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ echo "<script>document.getElementById('hiddenField').innerHTML = '$id';</script>
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
-				<span class="h4 d-block my-3">Upload required documents</span>
+				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
 				<div class="card mt-3 p-3">
 					<form action="">
 						<input class="d-block" type="file" id="input_submitFile" name="filename" required>
