@@ -56,4 +56,18 @@
 			</div>
 		</div>
 	</body>
+    <script>
+
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+        if (urlParams.has('success')) {
+            const errorMessage = decodeURIComponent(urlParams.get('success'));
+            alert(errorMessage);
+        }
+
+    </script>
 </html>
