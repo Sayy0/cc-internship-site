@@ -56,7 +56,7 @@ $grade = $_SESSION['grade'];
 									<div class="card w-25 mx-auto my-auto">
 										<span class="h4 d-block my-3">Indemnity Form</span>
 										<div class="card mt-3 p-3">
-											<input class="d-block" type="file" id="input_indemnForm" name="input_indemForm" required>
+											<input class="d-block" type="file" id="input_indemnForm" name="input_indemnForm" required>
 										</div>
 									</div>
 
