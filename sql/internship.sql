@@ -42,8 +42,9 @@ CREATE TABLE `Internship` (
   `report2FP` varchar(15) NOT NULL,
   `report3Status` varchar(15) NOT NULL,
   `report3FP` varchar(15) NOT NULL,
-  `finalReportStatus` varchar(15) NOT NULL
-  `finalReportFP` varchar(15) NOT NULL
+  `finalReportStatus` varchar(15) NOT NULL,
+  `finalReportFP` varchar(15) NOT NULL,
+  `grade` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

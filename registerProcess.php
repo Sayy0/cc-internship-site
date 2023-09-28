@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $studentId = $row["studentId"];
             $test2 = 1234;
 
-            $createInternQuery = "INSERT INTO Internship (studentId, indemnityStatus, parentsAckStatus, acceptanceLtrStatus, report1Status, report2Status, report3Status, finalReportStatus) VALUES ('$studentId', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty')";
+            $createInternQuery = "INSERT INTO Internship (studentId, indemnityStatus, indemnityFP, parentsAckStatus, parentsAckFP, acceptanceLtrStatus, acceptanceLtrFP, report1Status, report1FP, report2Status, report2FP, report3Status, report3FP, finalReportStatus, finalReportFP, grade) VALUES ('$studentId', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty')";
             if($conn->query($createInternQuery) === TRUE){
                 header("Location: studentLogin.php");
                 exit();

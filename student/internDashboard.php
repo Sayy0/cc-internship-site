@@ -5,6 +5,11 @@ $internId = $_SESSION['internId'];
 $indemnityStatus = $_SESSION['indemnityStatus'];
 $parentsStatus = $_SESSION['parentsStatus'];
 $acceptanceStatus = $_SESSION['acceptanceStatus'];
+$r1Status = $_SESSION['rpt1Status'];
+$r2Status = $_SESSION['rpt2Status'];
+$r3Status = $_SESSION['rpt3Status'];
+$frStatus = $_SESSION['finalStatus'];
+$grade = $_SESSION['grade'];
 
 ?>
 <!DOCTYPE html>
@@ -115,7 +120,7 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 					<div id="viewGradeDiv" class="mx-auto w-100">
 						<span class="h4 d-block my-3">View Grade</span>
 						<div class="card mt-3 p-3">
-							<span class="h5">Congratulations on completion of internship</span>
+							<span id="span_grade" class="h5">Congratulations on completion of internship</span>
 							<span class="h6">Your Grade : </span>
 						</div>
 					</div>
@@ -134,14 +139,59 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 		var indemnStatus = '<?php echo $indemnityStatus; ?>';
 		var parentsStatus = '<?php echo $parentsStatus; ?>';
 		var acceptanceStatus = '<?php echo $acceptanceStatus; ?>';
+		var mr1Status = '<?php echo $acceptanceStatus; ?>';
+		var mr2Status = '<?php echo $acceptanceStatus; ?>';
+		var mr3Status = '<?php echo $acceptanceStatus; ?>';
+		var r1Status = '<?php echo $r1Status; ?>';
+		var r2Status = '<?php echo $r2Status; ?>';
+		var r3Status = '<?php echo $r3Status; ?>';
+		var frStatus = '<?php echo $frStatus; ?>';
+		var grade = '<?php echo $grade; ?>';
 
-		if(indemnStatus == "empty" ||parentsStatus == "empty" || acceptanceStatus == "empty"){
-			document.getElementById('uploadMR1div').style.display = 'none';
-			document.getElementById('uploadMR2div').style.display = 'none';
-			document.getElementById('uploadMR3div').style.display = 'none';
-			document.getElementById('uploadFRdiv').style.display = 'none';
+		if(grade == "empty"){
 			document.getElementById('viewGradeDiv').style.display = 'none';
+			if(indemnStatus == "empty" ||parentsStatus == "empty" || acceptanceStatus == "empty"){
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+			}
+			else if(mr1Status == "empty"){
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+			}
+			else if(mr2Status == "empty"){
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+			}
+			else if(mr3Status == "empty"){
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+			}
+			else if(frStatus == "empty"){
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+			}
 		}
+		else{
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+
+				document.getElementById('span_grade').innerHTML = "Your Grade : " + grade;
+
+		}
+
 
     </script>
 </html>

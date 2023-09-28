@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $report2Status = $row["report2Status"];
                 $report3Status = $row["report3Status"];
                 $finalReportStatus = $row["finalReportStatus"];
+                $grade = $row["grade"];
 
                 session_start();
                 $_SESSION['userid'] = $dbId;
@@ -50,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['rpt2Status'] = $report2Status;
                 $_SESSION['rpt3Status'] = $report3Status;
                 $_SESSION['finalStatus'] = $finalReportStatus;
+                $_SESSION['grade'] = $grade;
                 header("Location: ./student/internDashboard.php");
                 exit();
             } 
