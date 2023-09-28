@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }    
 
     
-    $updateQuery = "UPDATE Staff SET name = '$name', email = '$phoneNo' WHERE staffId= '$id'";
+    $updateQuery = "UPDATE Staff SET name = '$name', email = '$email' WHERE staffId= '$id'";
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Submitted Successfully";
