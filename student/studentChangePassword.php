@@ -24,7 +24,7 @@
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span class="h4 d-block my-3">User Profile</span>
-                <form action="">
+                <form action="./studentChangePwProcess.php" method="post">
                     <div class="card mt-3 p-3">
                         <div class="row">
                             <div class="mb-4 col">
@@ -38,10 +38,11 @@
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_cpw">Confirm Password</label>
                                 <input class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
+								<span class="text-danger" id='errorSpan' hidden>*Passwords do not match!</span>
                             </div>
                             <div class="">
                                 <a href="./studentProfile.php" class="btn btn-danger w-25">Cancel</a>
-                                <input type="submit" value="Save" class="btn btn-success w-25">
+                                <input id='saveBtn' type="submit" value="Save" class="btn btn-success w-25" disabled>
                             </div>
                         </div>
                     </div>
@@ -49,4 +50,25 @@
 			</div>
 		</div>
 	</body>
+    <script>
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+
+		var saveBtn = document.getElementById(saveBtn);
+		var newPw = document.getElementById(tb_npw);
+		var confirmPw = document.getElementById(tb_cpw);
+		var errorSpan = document.getElementById(errorSpan);
+		if(newPw.value != confirmPw.value){
+			errorSpan.hidden = false;
+			saveBtn.disabled = false;
+		}
+		else{
+			erroSpan.hidden = true;
+			saveBtn.disabled = false;
+		}
+    </script>
 </html>
