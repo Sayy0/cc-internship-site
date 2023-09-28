@@ -5,6 +5,9 @@ $internId = $_SESSION['internId'];
 $indemnityStatus = $_SESSION['indemnityStatus'];
 $parentsStatus = $_SESSION['parentsStatus'];
 $acceptanceStatus = $_SESSION['acceptanceStatus'];
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +36,36 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 			<div class="w-50 mx-auto">
 				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
 				<div class="card mt-3 p-3">
+					<!--=========================================================================== Required docs ===========================================================================-->
+					<div id="uploadMR1div" class="mx-auto w-100">
+						<form action="" method="post">
+
+							<div class="row">
+								<div class="card">
+									<span class="h4 d-block my-3">Indemnity Form</span>
+									<div class="card mt-3 p-3">
+										<input class="d-block" type="file" id="input_indemnForm" name="input_indemForm" required>
+									</div>
+								</div>
+								<div class="card">
+									<span class="h4 d-block my-3">Parents Acceptance Form</span>
+									<div class="card mt-3 p-3">
+										<input class="d-block" type="file" id="input_parentsForm" name="input_parentsForm" required>
+									</div>
+								</div>
+								<div class="card">
+									<span class="h4 d-block my-3">Company Acceptance Letter</span>
+									<div class="card mt-3 p-3">
+										<input class="d-block" type="file" id="input_companyLtr" name="input_companyLtr" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<input type="submit" value="Submit">
+							</div>
+
+						</form>
+					</div>
 					<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
 					<div id="uploadMR1div" class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 1</span>
