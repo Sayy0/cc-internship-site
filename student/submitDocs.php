@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $internId = $row["internshipId"];
                 $indemnityStatus = $row["indemnityStatus"];
                 $parentsStatus = $row["parentsAckStatus"];
-                $acceptanceResult = $row["acceptanceLtrStatus"];
+                $acceptanceStatus = $row["acceptanceLtrStatus"];
                 $report1Status = $row["report1Status"];
                 $report2Status = $row["report2Status"];
                 $report3Status = $row["report3Status"];
