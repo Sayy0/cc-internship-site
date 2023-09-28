@@ -99,13 +99,17 @@ $grade = $_SESSION['grade'];
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 2 ===========================================================================-->
 					<div id="uploadMR2div" class="mx-auto w-100">
-						<span class="h4 d-block my-3">Submit Monthly Report 2</span>
-						<div class="card mt-3 p-3">
-							<form action="">
-								<input class="d-block" type="file" id="input_submitFile" name="filename" required>
-								<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
-							</form>	
-						</div>
+						<form action="submitMr2.php" method="post" enctype="multipart/form-data">
+							<span class="h4 d-block my-3">Submit Monthly Report 2</span>
+							<div class="card mt-3 p-3">
+								<div class="row justify-items-center my-3">
+									<input class="d-block" type="file" id="input_mr2" name="input_mr2" required>
+								</div>
+								<div class="row">
+									<input id="mr2Submit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
+								</div>
+							</div>
+						</form>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 3 ===========================================================================-->
 					<div id="uploadMR3div" class="mx-auto w-100">
