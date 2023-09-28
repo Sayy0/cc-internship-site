@@ -85,13 +85,17 @@ $grade = $_SESSION['grade'];
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
 					<div id="uploadMR1div" class="mx-auto w-100">
-						<span class="h4 d-block my-3">Submit Monthly Report 1</span>
-						<div class="card mt-3 p-3">
-							<form action="">
-								<input class="d-block" type="file" id="input_submitFile" name="filename" required>
-								<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
-							</form>	
-						</div>
+						<form action="submiMr1.php" method="post" enctype="multipart/form-data">
+							<span class="h4 d-block my-3">Submit Monthly Report 1</span>
+							<div class="card mt-3 p-3">
+								<div class="row justify-items-center my-3">
+									<input class="d-block" type="file" id="input_mr1" name="input_mr1" required>
+								</div>
+								<div class="row">
+									<input id="mr1Submit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
+								</div>
+							</div>
+						</form>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 2 ===========================================================================-->
 					<div id="uploadMR2div" class="mx-auto w-100">
@@ -138,6 +142,10 @@ $grade = $_SESSION['grade'];
         // Check if the "error" parameter exists in the URL
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+        if (urlParams.has('success')) {
             const errorMessage = decodeURIComponent(urlParams.get('error'));
             alert(errorMessage);
         }

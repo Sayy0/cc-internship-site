@@ -1,4 +1,3 @@
-
 <?php 
 
 session_start();
@@ -7,10 +6,7 @@ $errMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the registration form
-    $indemnForm = $_FILES["input_indemnForm"]; 
-    $parentsForm = $_FILES["input_parentsForm"];
-    $companyLtr = $_FILES["input_companyLtr"];
-    $internId= $_SESSION["internId"];
+    $mr1 = $_FILES["input_mr1"]; 
 
     $saveDir = "./documents/" . $internId . "/";
 
@@ -25,25 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }    
 
-    $indemnFP = $saveDir . basename($internId . "_indemnityForm.pdf");
-    $parentsFP = $saveDir . basename($internId . "_parentsAcknowledgementForm.pdf");
-    $companyFP = $saveDir . basename($internId . "_companyAcceptanceLetter.pdf");
+    $mr1FP = $saveDir . basename($internId . "_monthlyReport1.pdf");
 
-    if (file_exists($indemnFP)) {
-        unlink($indemnFP); // Delete the existing file
-    }
-    if (file_exists($parentsFP)) {
-        unlink($parentsFP); // Delete the existing file
-    }
-    if (file_exists($companyFP)) {
-        unlink($companyFP); // Delete the existing file
+    if (file_exists($mr1FP)) {
+        unlink($mr1FP); // Delete the existing file
     }
 
-    if (move_uploaded_file($indemnForm["tmp_name"], $indemnFP) &&
-        move_uploaded_file($parentsForm["tmp_name"], $parentsFP) &&
-        move_uploaded_file($companyLtr["tmp_name"], $companyFP)) {
+    if (move_uploaded_file($mr1["tmp_name"], $mr1FP)) {
 
-        $updateQuery = "UPDATE Internship SET indemnityStatus = 'pending', parentsAckStatus = 'pending', acceptanceLtrStatus = 'pending', indemnityFP = '$indemnFP', parentsAckFP = '$parentsFP', acceptanceLtrFP = '$companyFP' WHERE internshipId = $internId";
+        $updateQuery = "UPDATE Internship SET report1Status = 'submitted', report1FP = '$mr1FP' WHERE internshipId = $internId";
 
         if($conn->query($updateQuery) === TRUE){
 
