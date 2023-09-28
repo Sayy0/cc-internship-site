@@ -137,5 +137,9 @@
             const errorMessage = decodeURIComponent(urlParams.get('error'));
             alert(errorMessage);
         }
+        if (urlParams.has('success')) {
+            const errorMessage = decodeURIComponent(urlParams.get('success'));
+            alert(errorMessage);
+        }
     </script>
 </html>

@@ -45,12 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Changed Successfully";
-        header("Location: studentEditProfile.php?success=" . urlencode($succMsg));
+        header("Location: studentProfile.php?success=" . urlencode($succMsg));
         exit();
     }
     else{
         $errMsg= "Error: Unable to update profile" . $conn->error;
-        header("Location: studentEditProfile.php?error=" . urlencode($errMsg));
+        header("Location: studentProfile.php?error=" . urlencode($errMsg));
         exit();
     }
 
