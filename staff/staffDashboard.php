@@ -104,7 +104,7 @@
 										echo "
 											<td>
 												<form method='post' action='gradeProcess.php'>
-													<input type='hidden' id='tb_id' value='$internshipId' class='text-white' />
+													<input type='hidden' id='tb_id' name='tb_id' value='$internshipId' class='text-white' />
 													<select class='d-block w-100 form-select mb-2' required name='ddl_grade' id='ddl_grade'>
 														<option value='A'>A</option>
 														<option value='A-'>A-</option>
