@@ -31,19 +31,19 @@ CREATE TABLE `Internship` (
   `internshipId` int(4) NOT NULL,
   `studentId` int(4) NOT NULL,
   `indemnityStatus` varchar(15) NOT NULL,
-  `indemnityFP` varchar(15) NOT NULL,
+  `indemnityFP` varchar(200) NOT NULL,
   `parentsAckStatus` varchar(15) NOT NULL,
-  `parentsAckFP` varchar(15) NOT NULL,
+  `parentsAckFP` varchar(200) NOT NULL,
   `acceptanceLtrStatus` varchar(15) NOT NULL,
-  `acceptanceLtrFP` varchar(15) NOT NULL,
+  `acceptanceLtrFP` varchar(200) NOT NULL,
   `report1Status` varchar(15) NOT NULL,
-  `report1FP` varchar(15) NOT NULL,
+  `report1FP` varchar(200) NOT NULL,
   `report2Status` varchar(15) NOT NULL,
-  `report2FP` varchar(15) NOT NULL,
+  `report2FP` varchar(200) NOT NULL,
   `report3Status` varchar(15) NOT NULL,
-  `report3FP` varchar(15) NOT NULL,
+  `report3FP` varchar(200) NOT NULL,
   `finalReportStatus` varchar(15) NOT NULL,
-  `finalReportFP` varchar(15) NOT NULL,
+  `finalReportFP` varchar(200) NOT NULL,
   `grade` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -58,7 +58,6 @@ CREATE TABLE `Staff` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `staffPassword` varchar(200) NOT NULL,
-  `picPath` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -75,7 +74,7 @@ CREATE TABLE `Student` (
   `gender` varchar(1) NOT NULL,
   `programme` varchar(3) NOT NULL,
   `studentPassword` varchar(200) NOT NULL,
-  `picPath` varchar(100) DEFAULT NULL
+  `picPath` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
