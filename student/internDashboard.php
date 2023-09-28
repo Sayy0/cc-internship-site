@@ -222,6 +222,7 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
+				document.getElementById('viewGradeDiv').style.display = 'block';
 				document.getElementById('span_grade').innerHTML = "Your Grade : Not Graded";
 			}
 		}
