@@ -105,11 +105,23 @@
 		$conn->close();
 
 		$loadscript= "
-			document.getElementById('tb_email').innerHTML = $email;
-			document.getElementById('tb_name').innerHTML = $name;
-			document.getElementById('tb_phoneNo').innerHTML = $phoneNo;
-			document.getElementById('ddl_gender').value = $gender;
-			document.getElementById('ddl_programme').value = $programme;
+			document.getElementById('tb_email').value = $email;
+			document.getElementById('tb_name').value = $name;
+			document.getElementById('tb_phoneNo').value = $phoneNo;
+			for(var i = 0; i < document.getElementById('ddl_gender').options.length; i++){
+				var option = document.getElementById('ddl_gender').options[i];
+				if(option.value == $gender){
+					document.getElementById('ddl_gender').selectedIndex = i;
+					break;
+				}
+			}
+			for(var i = 0; i < document.getElementById('ddl_programme').options.length; i++){
+				var option = document.getElementById('ddl_programme').options[i];
+				if(option.value == $programme){
+					document.getElementById('ddl_programme').selectedIndex = i;
+					break;
+				}
+			}
 		";
 
 		echo "<script>$loadscript</script>";
