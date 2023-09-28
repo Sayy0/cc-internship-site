@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phoneNo = $_POST["tb_phoneNo"];
     $gender = $_POST["ddl_gender"];
     $programme = $_POST["ddl_programme"];
-    $session = $_POST["ddl_session"];
 
     $pw = substr(hash('sha256', $_POST["tb_pw"]), 0, 50); // Hash the password
 
