@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($dbPassword === $pw){
 
-            $internQuery = "SELECT * FROM Internship WHERE studentid = '$dbId'";
+            $internQuery = "SELECT * FROM Internship WHERE studentId = '$dbId'";
             $internResult = $conn->query($internQuery);
             if($internResult->num_rows > 0){
                 $row = $internResult->fetch_assoc();
