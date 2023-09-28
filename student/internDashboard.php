@@ -153,9 +153,6 @@ $grade = $_SESSION['grade'];
 		var indemnStatus = '<?php echo $indemnityStatus; ?>';
 		var parentsStatus = '<?php echo $parentsStatus; ?>';
 		var acceptanceStatus = '<?php echo $acceptanceStatus; ?>';
-		var mr1Status = '<?php echo $acceptanceStatus; ?>';
-		var mr2Status = '<?php echo $acceptanceStatus; ?>';
-		var mr3Status = '<?php echo $acceptanceStatus; ?>';
 		var r1Status = '<?php echo $r1Status; ?>';
 		var r2Status = '<?php echo $r2Status; ?>';
 		var r3Status = '<?php echo $r3Status; ?>';
@@ -171,28 +168,28 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 			}
-			else if(indemnStatus == "pending" ||parentsStatus == "pending" || acceptanceStatus == "pending"){
+			else if(indemnStatus == "pending" || parentsStatus == "pending" || acceptanceStatus == "pending"){
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 			}
-			else if(mr1Status == "empty"){
+			else if(r1Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 			}
-			else if(mr2Status == "empty"){
+			else if(r2Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 			}
-			else if(mr3Status == "empty"){
+			else if(r3Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR1div').style.display = 'none';
@@ -219,7 +216,8 @@ $grade = $_SESSION['grade'];
 					document.getElementById('span_grade').innerHTML = "Your Grade : " + grade;
 				}
 				else{
-					document.getElementById('viewGradeDiv').style.display = 'none';
+					document.getElementById('pendingDiv').style.display = 'none';
+					document.getElementById('span_grade').innerHTML = "Your Grade : Not Graded";
 				}
 
 		}
