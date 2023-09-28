@@ -97,7 +97,6 @@
 		$conn->close();
 
 		$loadscript= "
-			document.getElementById('tb_email').value = '$email';
 			document.getElementById('tb_name').value = '$name';
 			document.getElementById('tb_phoneNo').value = '$phoneNo';
 			for(var i = 0; i < document.getElementById('ddl_gender').options.length; i++){
