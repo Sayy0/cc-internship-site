@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkPwResult = $conn->query($checkPwQuery);
     if($checkPwResult->num_rows > 0){
         $row = $checkPwResult->fetch_assoc();
-        $dbPw = $row['studentPassword'];
+        $dbPw = $row['staffPassword'];
         if($oldPw != $dbPw){
             $errMsg= "Error: Incorrect old password";
             header("Location: staffChangePassword.php?error=" . urlencode($errMsg));
