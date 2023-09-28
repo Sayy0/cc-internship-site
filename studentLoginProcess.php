@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $internResult = $conn->query($internQuery);
             if($internResult->num_rows > 0){
                 $row = $internResult->fetch_assoc();
+                $internId = $row["internshipId"];
                 $indemnityStatus = $row["indemnityStatus"];
                 $parentsStatus = $row["parentsAckStatus"];
                 $acceptanceResult = $row["acceptanceLtrStatus"];
@@ -41,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 session_start();
                 $_SESSION['userid'] = $dbId;
-                $_SESSION['indemStatus'] = $indemnityStatus;
+                $_SESSION['internId'] = $internId; 
+                $_SESSION['indemnityStatus'] = $indemnityStatus;
                 $_SESSION['parentsStatus'] = $parentsStatus;
                 $_SESSION['acceptanceStatus'] = $acceptanceStatus;
                 $_SESSION['rpt1Status'] = $report1Status;

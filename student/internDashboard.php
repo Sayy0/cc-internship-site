@@ -1,6 +1,10 @@
 <?php 
 session_start();
 $id = $_SESSION['userid'];
+$internId = $_SESSION['internId'];
+$indemnityStatus = $_SESSION['indemnityStatus'];
+echo($internId);
+echo($indemnityStatus);
 ?>
 <!DOCTYPE html>
 <html lang="en">
