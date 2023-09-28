@@ -7,7 +7,7 @@ $succMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the registration form
-    $fp = $_FILES["input_fp"]; 
+    $fr = $_FILES["input_fr"]; 
     $internId= $_SESSION["internId"];
 
     $saveDir = "./documents/" . $internId . "/";
@@ -23,15 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }    
 
-    $fpFP = $saveDir . basename($internId . "_finalReport.pdf");
+    $frFP = $saveDir . basename($internId . "_finalReport.pdf");
 
-    if (file_exists($fpFP)) {
-        unlink($fpFP); // Delete the existing file
+    if (file_exists($frFP)) {
+        unlink($frFP); // Delete the existing file
     }
 
-    if (move_uploaded_file($fp["tmp_name"], $fpFP)) {
+    if (move_uploaded_file($fr["tmp_name"], $frFP)) {
 
-        $updateQuery = "UPDATE Internship SET finalReportStatus = 'submitted', finalReportFP = '$fpFP' WHERE internshipId = $internId";
+        $updateQuery = "UPDATE Internship SET finalReportStatus = 'submitted', finalReportFP = '$frFP' WHERE internshipId = $internId";
 
         if($conn->query($updateQuery) === TRUE){
 
