@@ -22,6 +22,7 @@ session_destroy();
 					<span class="display-3 text-white">Student Login</span>
 				</div>
 				<div class="card p-5 mx-auto w-50">
+					<img src="https://leexiqian-bucket.s3.amazonaws.com/tarumtLogo.png" class="w-75"  alt="TARUMT LOGO">
 					<span class="h4">Login</span>
 					<form class="d-block m-3" action="./studentLoginProcess.php" method="POST">
 						<div class="mb-4">
