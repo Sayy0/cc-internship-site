@@ -132,7 +132,15 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
         }
 
 		var indemnStatus = '<?php echo $indemnityStatus; ?>';
-		console.log(indemnStatus);
+		var parentsStatus = '<?php echo $parentsStatus; ?>';
+		var acceptanceStatus = '<?php echo $acceptanceStatus; ?>';
+
+		if(indemnStatus == "empty" ||parentsStatus == "empty" || acceptanceStatus == "empty"){
+			document.getElementById('uploadMR1div').style.display = 'none';
+			document.getElementById('uploadMR2div').style.display = 'none';
+			document.getElementById('uploadMR3div').style.display = 'none';
+
+		}
 
     </script>
 </html>
