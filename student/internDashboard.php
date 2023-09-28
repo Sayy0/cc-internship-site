@@ -127,13 +127,17 @@ $grade = $_SESSION['grade'];
 					</div>
 					<!--=========================================================================== FNAL REPORT ===========================================================================-->
 					<div id="uploadFRdiv" class="mx-auto w-100">
-						<span class="h4 d-block my-3">Submit Final Report</span>
-						<div class="card mt-3 p-3">
-							<form action="">
-								<input class="d-block" type="file" id="input_submitFile" name="filename" required>
-								<input class="d-block mt-3" type="submit" id="input_submitDocs" value="Submit Documents">
-							</form>	
-						</div>
+						<form action="submitFr.php" method="post" enctype="multipart/form-data">
+							<span class="h4 d-block my-3">Submit Final Report</span>
+							<div class="card mt-3 p-3">
+								<div class="row justify-items-center my-3">
+									<input class="d-block" type="file" id="input_fr" name="input_fr" required>
+								</div>
+								<div class="row">
+									<input id="frSubmit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
+								</div>
+							</div>
+						</form>
 					</div>
 					<!--=========================================================================== View Grade ===========================================================================-->
 					<div id="viewGradeDiv" class="mx-auto w-100">
