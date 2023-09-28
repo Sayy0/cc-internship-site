@@ -3,8 +3,8 @@ session_start();
 $id = $_SESSION['userid'];
 $internId = $_SESSION['internId'];
 $indemnityStatus = $_SESSION['indemnityStatus'];
-echo($internId);
-echo($indemnityStatus);
+$parentsStatus = $_SESSION['parentsStatus'];
+$acceptanceStatus = $_SESSION['acceptanceStatus'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
