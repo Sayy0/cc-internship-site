@@ -33,16 +33,16 @@
                             </div>
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_npw">New Password</label>
-                                <input class="d-block w-100 form-control" type="password" name="tb_npw" id="tb_npw" placeholder="New Password" required />
+                                <input oninput="checkPw()" class="d-block w-100 form-control" type="password" name="tb_npw" id="tb_npw" placeholder="New Password" required />
                             </div>
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_cpw">Confirm Password</label>
-                                <input class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
+                                <input oninput="checkPw()" class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
 								<span class="text-danger" id='errorSpan' hidden>*Passwords do not match!</span>
                             </div>
                             <div class="">
                                 <a href="./studentProfile.php" class="btn btn-danger w-25">Cancel</a>
-                                <input id='saveBtn' type="submit" onchange="checkPw()" value="Save" class="btn btn-success w-25" disabled>
+                                <input id='saveBtn' type="submit" value="Save" class="btn btn-success w-25" disabled>
                             </div>
                         </div>
                     </div>
@@ -65,10 +65,10 @@
 			var errorSpan = document.getElementById(errorSpan);
 			if(newPw.value != confirmPw.value){
 				errorSpan.hidden = false;
-				saveBtn.disabled = false;
+				saveBtn.disabled = true;
 			}
 			else{
-				erroSpan.hidden = true;
+				errorSpan.hidden = true;
 				saveBtn.disabled = false;
 			}
 		}
