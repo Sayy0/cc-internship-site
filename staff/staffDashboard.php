@@ -70,7 +70,7 @@
 									$grade = $row['grade'];
 									$studentName = "NULL";
 
-									$studentQuery = "SELECT * FROM Student WHERE 'studentId' = '$studentId' ";	
+									$studentQuery = "SELECT * FROM Student WHERE studentId = '$studentId' ";	
 									$studentResult = $conn->query($studentQuery);
 									if($studentResult->num_rows > 0){
 										$studrow = $studentResult->fetch_assoc();
