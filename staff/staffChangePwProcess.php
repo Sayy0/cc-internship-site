@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dbPw = $row['studentPassword'];
         if($oldPw != $dbPw){
             $errMsg= "Error: Incorrect old password";
-            header("Location: studentChangePassword.php?error=" . urlencode($errMsg));
+            header("Location: staffChangePassword.php?error=" . urlencode($errMsg));
             exit();
         }
     }
@@ -46,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Changed Successfully";
-        header("Location: studentProfile.php?success=" . urlencode($succMsg));
+        header("Location: staffProfile.php?success=" . urlencode($succMsg));
         exit();
     }
     else{
-        $errMsg= "Error: Unable to update profile" . $conn->error;
-        header("Location: studentProfile.php?error=" . urlencode($errMsg));
+        $errMsg= "Error: Unable to Change Password" . $conn->error;
+        header("Location: staffProfile.php?error=" . urlencode($errMsg));
         exit();
     }
 
