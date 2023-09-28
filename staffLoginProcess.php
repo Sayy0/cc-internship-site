@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($dbPassword === $pw){
 
-            header("Location: ./staff/staffDashboard.php");
+            header("Location: ./staff/staffUpcomingSession.php");
             exit();
                 $errMsg = "Unable to create session.";
                 header("Location: staffLogin.php?error=" . urlencode($errMsg));
