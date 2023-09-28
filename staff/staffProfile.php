@@ -51,5 +51,35 @@
 				</div>
 			</div>
 		</div>
+	<?php
+
+		session_start();
+		$id = 1;
+
+		$email = "Unable to Load Data";
+		$name = "Unable to Load Data";
+		require("../sql/connectDB.php");
+
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}    
+
+		$getUserQuery = "SELECT * FROM Staff WHERE staffId = '$id'";
+
+		$getUserResult = $conn->query($getUserQuery);
+		if($getUserResult->num_rows > 0){
+			$row = $getUserResult->fetch_assoc();
+			$email = $row["email"];
+			$name= $row["name"];
+		}
+		$conn->close();
+
+		$loadscript= "
+			document.getElementById('tb_email').value = '$email';
+			document.getElementById('tb_name').value = '$name';
+		";
+
+		echo "<script>$loadscript</script>";
+	?>
 	</body>
 </html>
