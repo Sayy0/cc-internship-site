@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }    
 
     
-    $updateQuery = "UPDATE Internship SET grade = '$grade', WHERE internshipId = '$id'";
+    $updateQuery = "UPDATE Internship SET grade = '$grade' WHERE internshipId = '$id'";
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Submitted Successfully";
