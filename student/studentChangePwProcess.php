@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }    
 
     $checkPwQuery = "SELECT * FROM Student WHERE studentId = '" . $id. "'";
-    $checkPwResult = $conn->query($checkEmail);
+    $checkPwResult = $conn->query($checkPwQuery);
     if($checkPwResult->num_rows > 0){
         $row = $checkPwResult->fetch_assoc();
         $dbPw = $row['studentPassword'];
