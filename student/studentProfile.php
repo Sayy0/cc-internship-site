@@ -1,15 +1,3 @@
-<?php 
-session_start();
-$studentId = $_SESSION['userid'];
-
-$email = "Unable to Load Data";
-$name = "Unable to Load Data";
-$phoneNo = "Unable to Load Data";
-$gender = "Unable to Load Data";
-$programme = "Unable to Load Data";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -89,6 +77,14 @@ $programme = "Unable to Load Data";
 		</div>
 	<?php
 
+		session_start();
+		$studentId = $_SESSION['userid'];
+
+		$email = "Unable to Load Data";
+		$name = "Unable to Load Data";
+		$phoneNo = "Unable to Load Data";
+		$gender = "Unable to Load Data";
+		$programme = "Unable to Load Data";
 		require("../sql/connectDB.php");
 
 		if ($conn->connect_error) {
