@@ -38,41 +38,48 @@ $grade = $_SESSION['grade'];
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
+					<div id="pendingDiv" class="mx-auto w-100">
+						<div class="card mt-3 p-3 text-center">
+							<div class="mx-auto">
+								<span class="h4">Your Submission Is Pending</span>
+							</div>
+						</div>
+					</div>
 					<!--=========================================================================== Required docs ===========================================================================-->
 					<div id="uploadDocsDiv" class="mx-auto w-100">
-						<form action="" method="post">
+						<form action="submitDocs.php" method="post">
 
-						<div class="card">
+							<div class="card">
 
-							<div class="row justify-items-center my-3">
+								<div class="row justify-items-center my-3">
 
-								<div class="card w-25 mx-auto my-auto">
-									<span class="h4 d-block my-3">Indemnity Form</span>
-									<div class="card mt-3 p-3">
-										<input class="d-block" type="file" id="input_indemnForm" name="input_indemForm" required>
+									<div class="card w-25 mx-auto my-auto">
+										<span class="h4 d-block my-3">Indemnity Form</span>
+										<div class="card mt-3 p-3">
+											<input class="d-block" type="file" id="input_indemnForm" name="input_indemForm" required>
+										</div>
 									</div>
+
+									<div class="card w-25 mx-auto my-auto">
+										<span class="h4 d-block my-3">Parents Acceptance Form</span>
+										<div class="card mt-3 p-3">
+											<input class="d-block" type="file" id="input_parentsForm" name="input_parentsForm" required>
+										</div>
+									</div>
+
+									<div class="card w-25 mx-auto my-auto">
+										<span class="h4 d-block my-3">Company Acceptance Letter</span>
+										<div class="card mt-3 p-3">
+											<input class="d-block" type="file" id="input_companyLtr" name="input_companyLtr" required>
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<input id="docsSubmit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
 								</div>
 
-								<div class="card w-25 mx-auto my-auto">
-									<span class="h4 d-block my-3">Parents Acceptance Form</span>
-									<div class="card mt-3 p-3">
-										<input class="d-block" type="file" id="input_parentsForm" name="input_parentsForm" required>
-									</div>
-								</div>
-
-								<div class="card w-25 mx-auto my-auto">
-									<span class="h4 d-block my-3">Company Acceptance Letter</span>
-									<div class="card mt-3 p-3">
-										<input class="d-block" type="file" id="input_companyLtr" name="input_companyLtr" required>
-									</div>
-								</div>
-								
 							</div>
-							<div class="row">
-								<input id="docsSubmit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
-							</div>
-
-						</div>
 
 						</form>
 					</div>
@@ -130,10 +137,9 @@ $grade = $_SESSION['grade'];
     <script>
         // Check if the "error" parameter exists in the URL
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('id')) {
-			const currentId = decodeURIComponent(urlParams.get('id'));
-			document.getElementById('hiddenField').innerHTML = currentId;
-
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
         }
 
 		var indemnStatus = '<?php echo $indemnityStatus; ?>';
@@ -155,30 +161,42 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
+			}
+			if(indemnStatus == "pending" ||parentsStatus == "pending" || acceptanceStatus == "pending"){
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
 			}
 			else if(mr1Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
 			}
 			else if(mr2Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
 			}
 			else if(mr3Status == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
 			}
 			else if(frStatus == "empty"){
 				document.getElementById('uploadDocsDiv').style.display = 'none';
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
 			}
 		}
 		else{
@@ -188,7 +206,13 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 
-				document.getElementById('span_grade').innerHTML = "Your Grade : " + grade;
+				if(grade != "empty"){
+					document.getElementById('pendingDiv').style.display = 'none';
+					document.getElementById('span_grade').innerHTML = "Your Grade : " + grade;
+				}
+				else{
+					document.getElementById('viewGradeDiv').style.display = 'none';
+				}
 
 		}
 
