@@ -48,6 +48,7 @@
 								<option value="RSW">Degree In Software Engineering</option>
 							</select>
 						</div>
+						<!--
 						<div class="mb-4">
 							<label class="d-block mb-1" for="ddl_session">Session</label>
 							<select class="d-block w-100 form-select" requried name="ddl_session" id="ddl_session">
@@ -56,6 +57,7 @@
 								<option value="202404">April 2024</option>
 							</select>
 						</div>
+-->
 						<div class="mb-4">
 							<label class="d-block mb-1" for="tb_pw">Password</label>
 							<input class="d-block w-100 form-control" type="password" name="tb_pw" id="tb_pw" required placeholder="Password" />

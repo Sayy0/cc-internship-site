@@ -153,16 +153,6 @@ $grade = $_SESSION['grade'];
 			</div>
 	</body>
     <script>
-        // Check if the "error" parameter exists in the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('error')) {
-            const errorMessage = decodeURIComponent(urlParams.get('error'));
-            alert(errorMessage);
-        }
-        if (urlParams.has('success')) {
-            const successMessage = decodeURIComponent(urlParams.get('success'));
-            alert(successMessage);
-        }
 
 		var indemnStatus = '<?php echo $indemnityStatus; ?>';
 		var parentsStatus = '<?php echo $parentsStatus; ?>';
@@ -247,6 +237,17 @@ $grade = $_SESSION['grade'];
 				}
 
 		}
+
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+        if (urlParams.has('success')) {
+            const successMessage = decodeURIComponent(urlParams.get('success'));
+            alert(successMessage);
+        }
 
 
     </script>

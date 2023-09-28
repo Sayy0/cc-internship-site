@@ -1,3 +1,14 @@
+<?php 
+session_start();
+$studentId = $_SESSION['userid'];
+
+$email = "Unable to Load Data";
+$name = "Unable to Load Data";
+$phoneNo = "Unable to Load Data";
+$gender = "Unable to Load Data";
+$programme = "Unable to Load Data";
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +69,7 @@
 								<option value="RSW">Degree In Software Engineering</option>
 							</select>
 						</div>
+						<!--
 						<div class="mb-4">
 							<label class="d-block mb-1" for="ddl_session">Session</label>
 							<select class="d-block w-100 form-select" requried disabled name="ddl_session" id="ddl_session">
@@ -66,6 +78,7 @@
 								<option value="202404">April 2024</option>
 							</select>
 						</div>
+-->
                         <div class="">
                             <a href="./studentEditProfile.php" class="btn btn-secondary w-25">Edit</a>
                             <a href="./studentChangePassword.php" class="btn btn-warning w-25">Change Password</a>
@@ -74,5 +87,36 @@
 				</div>
 			</div>
 		</div>
+	<?php
+
+		require("../sql/connectDB.php");
+
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}    
+
+		$getUserQuery = "SELECT * FROM Student WHERE studentId = '$id'";
+
+		$getUserResult = $conn->query($getUserQuery);
+		if($getUserResult->num_rows > 0){
+			$row = $getUserResult->fetch_assoc();
+			$email = $row["email"];
+			$name= $row["studentName"];
+			$phoneNo = $row["phoneNo"];
+			$gender = $row["gender"];
+			$programme = $row["programme"];
+		}
+		$conn->close();
+
+		$loadscript= "
+			document.getElementById('tb_email').innerHTML = $email;
+			document.getElementById('tb_name').innerHTML = $name;
+			document.getElementById('tb_phoneNo').innerHTML = $phoneNo;
+			document.getElementById('ddl_gender').value = $gender;
+			document.getElementById('ddl_programme').value = $programme;
+		";
+
+		echo "<script>$loadscript</script>";
+	?>
 	</body>
 </html>
