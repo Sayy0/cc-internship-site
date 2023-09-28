@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Submitted Successfully";
-        header("Location: studentProfile.php?success=" . urlencode($succMsg));
+        header("Location: studentEditProfile.php?success=" . urlencode($succMsg));
         exit();
     }
     else{
