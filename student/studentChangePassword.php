@@ -42,7 +42,7 @@
                             </div>
                             <div class="">
                                 <a href="./studentProfile.php" class="btn btn-danger w-25">Cancel</a>
-                                <input id='saveBtn' type="submit" value="Save" class="btn btn-success w-25" disabled>
+                                <input id='saveBtn' type="submit" value="Save" class="btn btn-success w-25">
                             </div>
                         </div>
                     </div>
