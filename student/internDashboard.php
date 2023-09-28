@@ -215,6 +215,15 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 			}
+			else{// everything submitted
+				document.getElementById('uploadDocsDiv').style.display = 'none';
+				document.getElementById('uploadMR1div').style.display = 'none';
+				document.getElementById('uploadMR2div').style.display = 'none';
+				document.getElementById('uploadMR3div').style.display = 'none';
+				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('pendingDiv').style.display = 'none';
+				document.getElementById('span_grade').innerHTML = "Your Grade : Not Graded";
+			}
 		}
 		else{
 				document.getElementById('uploadDocsDiv').style.display = 'none';
