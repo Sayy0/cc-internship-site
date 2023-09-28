@@ -143,8 +143,8 @@ $grade = $_SESSION['grade'];
 					<div id="viewGradeDiv" class="mx-auto w-100">
 						<span class="h4 d-block my-3">View Grade</span>
 						<div class="card mt-3 p-3">
-							<span id="span_grade" class="h5">Congratulations on completion of internship</span>
-							<span class="h6">Your Grade : </span>
+							<span class="h5">Congratulations on completion of internship</span>
+							<span id="span_grade" class="h6">Your Grade : </span>
 						</div>
 					</div>
 				</div>
