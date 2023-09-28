@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }    
 
-    $mr3FP = $saveDir . basename($internId . "_monthlyReport2.pdf");
+    $mr3FP = $saveDir . basename($internId . "_monthlyReport3.pdf");
 
     if (file_exists($mr3FP)) {
         unlink($mr3FP); // Delete the existing file
