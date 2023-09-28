@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }    
 
     if($newPw != $conPw){
-        $errMsg= "Error: Incorrect old password";
+        $errMsg= "Error: Passwords do not match!";
         header("Location: studentChangePassword.php?error=" . urlencode($errMsg));
         exit();
     }
