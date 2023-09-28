@@ -91,7 +91,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		}    
 
-		$getUserQuery = "SELECT * FROM Student WHERE studentId = '$id'";
+		$getUserQuery = "SELECT * FROM Student WHERE studentId = '$studentId'";
 
 		$getUserResult = $conn->query($getUserQuery);
 		if($getUserResult->num_rows > 0){
