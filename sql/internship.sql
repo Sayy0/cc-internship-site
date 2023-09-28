@@ -57,7 +57,7 @@ CREATE TABLE `Staff` (
   `staffId` int(4) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `staffPassword` varchar(200) NOT NULL,
+  `staffPassword` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
