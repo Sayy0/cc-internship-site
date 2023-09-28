@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['finalStatus'] = $finalReportStatus;
                 $_SESSION['grade'] = $grade;
                 header("Location: internDashboard.php");
+                header("Location: internDashboard.php?status=" . urlencode($indemnityStatus). urlencode($parentsStatus) . urlencode($acceptanceStatus));
                 exit();
             } 
             else{
