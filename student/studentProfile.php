@@ -105,19 +105,19 @@
 		$conn->close();
 
 		$loadscript= "
-			document.getElementById('tb_email').value = $email;
-			document.getElementById('tb_name').value = $name;
-			document.getElementById('tb_phoneNo').value = $phoneNo;
+			document.getElementById('tb_email').value = '$email';
+			document.getElementById('tb_name').value = '$name';
+			document.getElementById('tb_phoneNo').value = '$phoneNo';
 			for(var i = 0; i < document.getElementById('ddl_gender').options.length; i++){
 				var option = document.getElementById('ddl_gender').options[i];
-				if(option.value == $gender){
+				if(option.value == '$gender'){
 					document.getElementById('ddl_gender').selectedIndex = i;
 					break;
 				}
 			}
 			for(var i = 0; i < document.getElementById('ddl_programme').options.length; i++){
 				var option = document.getElementById('ddl_programme').options[i];
-				if(option.value == $programme){
+				if(option.value == '$programme'){
 					document.getElementById('ddl_programme').selectedIndex = i;
 					break;
 				}
