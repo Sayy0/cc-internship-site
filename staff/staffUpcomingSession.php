@@ -45,22 +45,79 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>2206963</td>
-							<td>Lee Xi Qian</td>
-							<td><a href="">View Document</a></td>
-							<td><a href="">View Document</a></td>
-							<td><a href="">View Document</a></td>
-							<td class="text-center"><a class="btn btn-success" href="">Accept</a></td>
-						</tr>
-						<tr>
-							<td>2206977</td>
-							<td>Tneoh Bee Lun</td>
-							<td><a href="">View Document</a></td>
-							<td><a href="">View Document</a></td>
-							<td><a href="">View Document</a></td>
-							<td class="text-center"><span class="btn btn-outline-success" href="">Accepted</span></td>
-						</tr>
+						<?php 
+							require("../sql/connectDB.php");
+
+							if ($conn->connect_error) {
+								die("Connection failed: " . $conn->connect_error);
+							}    
+							$getListQuery = "SELECT * FROM Internship";
+
+							$getListResult = $conn->query($getListQuery);
+
+							if($getListResult->num_rows > 0){
+								while($row = $getListResult->fetch_assoc()){
+									$internshipId = $row['internshipId'];
+									$studentId = $row['studentId'];
+									$indemnStatus = $row['indemnityStatus'];
+									$indemnFP= $row['indemnityFP'];
+									$parentsStatus = $row['parentsAckStatus'];
+									$parentsFP= $row['parentsAckFP'];
+									$acceptStatus = $row['acceptanceLtrStatus'];
+									$acceptFP= $row['acceptanceLtrFP'];
+									$studentName = "NULL";
+
+									$studentQuery = "SELECT * FROM Student WHERE studentId = '$studentId' ";	
+									$studentResult = $conn->query($studentQuery);
+									if($studentResult->num_rows > 0){
+										$studrow = $studentResult->fetch_assoc();
+										$studentName = $studrow["studentName"];
+									}
+
+									echo "<tr>";
+									echo "<td>" . $studentId . "</td>";
+									echo "<td>" . $studentName . "</td>";
+									if($indemnFP != "empty"){
+										echo "<td><a href='../student/" . $indemnFP . "' target='_blank' class='text-primary'>View File</a></td>";
+									}
+									else{
+										echo "<td class='text-danger'>Not Submitted</td>";
+									}
+									if($parentsFP != "empty"){
+										echo "<td><a href='../student/" . $parentsFP . "' target='_blank' class='text-primary'>View File</a></td>";
+									}
+									else{
+										echo "<td class='text-danger'>Not Submitted</td>";
+									}
+									if($acceptFP != "empty"){
+										echo "<td><a href='../student/" . $acceptFP . "' target='_blank' class='text-primary'>View File</a></td>";
+										echo "
+											<td>
+												<form method='post' action='acceptProcess.php'>
+													<input type='hidden' id='tb_id' name='tb_id' value='$internshipId' class='text-white' />
+													<input class='btn btn-success' type='submit' value='Accept'/></td>
+												</form>
+											</td>
+										";	
+									}
+									else{
+										echo "<td class='text-danger'>Not Submitted</td>";
+										echo "<td class='text-center'><span>-</span></td>";
+									}
+
+
+									echo "</tr>";
+								}
+
+							}
+							else{
+								echo "<tr><td colspan='7'>No Data Found</td></tr>";
+							}
+
+
+							$conn->close();
+						?>
+
 					</tbody>
 				</table>
 			</div>

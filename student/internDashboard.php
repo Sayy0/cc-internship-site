@@ -226,6 +226,7 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
+				document.getElementById('contentHeading').style.display = 'none';
 
 				if(grade != "empty"){
 					document.getElementById('pendingDiv').style.display = 'none';
