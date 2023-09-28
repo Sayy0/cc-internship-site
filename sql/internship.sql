@@ -48,7 +48,7 @@ CREATE TABLE `Internship` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
-
+UPDATE Internship SET indemnityStatus = 'accepted', parentsAckStatus = 'accepted', acceptanceLtrStatus = 'accepted', indemnityFP = '$indemnFP', parentsAckFP = '$parentsFP', acceptanceLtrFP = '$companyFP' WHERE internshipId = 1
 --
 -- Table structure for table `Staff`
 --
