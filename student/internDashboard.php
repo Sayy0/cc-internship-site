@@ -6,8 +6,6 @@ $indemnityStatus = $_SESSION['indemnityStatus'];
 $parentsStatus = $_SESSION['parentsStatus'];
 $acceptanceStatus = $_SESSION['acceptanceStatus'];
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,34 +33,41 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
-				<div class="card mt-3 p-3">
 					<!--=========================================================================== Required docs ===========================================================================-->
 					<div id="uploadMR1div" class="mx-auto w-100">
 						<form action="" method="post">
 
-							<div class="row">
-								<div class="card">
+						<div class="card">
+
+							<div class="row justify-items-center my-3">
+
+								<div class="card w-25 mx-auto my-auto">
 									<span class="h4 d-block my-3">Indemnity Form</span>
 									<div class="card mt-3 p-3">
 										<input class="d-block" type="file" id="input_indemnForm" name="input_indemForm" required>
 									</div>
 								</div>
-								<div class="card">
+
+								<div class="card w-25 mx-auto my-auto">
 									<span class="h4 d-block my-3">Parents Acceptance Form</span>
 									<div class="card mt-3 p-3">
 										<input class="d-block" type="file" id="input_parentsForm" name="input_parentsForm" required>
 									</div>
 								</div>
-								<div class="card">
+
+								<div class="card w-25 mx-auto my-auto">
 									<span class="h4 d-block my-3">Company Acceptance Letter</span>
 									<div class="card mt-3 p-3">
 										<input class="d-block" type="file" id="input_companyLtr" name="input_companyLtr" required>
 									</div>
 								</div>
+								
 							</div>
 							<div class="row">
-								<input type="submit" value="Submit">
+								<input id="docsSubmit" class="w-50 mb-3 mx-auto btn btn-primary" type="submit" value="Submit">
 							</div>
+
+						</div>
 
 						</form>
 					</div>
@@ -77,7 +82,7 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 						</div>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 2 ===========================================================================-->
-					<div class="mx-auto w-100">
+					<div id="uploadMR2div" class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 2</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -87,7 +92,7 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 						</div>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 3 ===========================================================================-->
-					<div class="mx-auto w-100">
+					<div id="uploadMR3div" class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 3</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -97,7 +102,7 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 						</div>
 					</div>
 					<!--=========================================================================== FNAL REPORT ===========================================================================-->
-					<div class="mx-auto w-100">
+					<div id="uploadFRdiv" class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Final Report</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -107,14 +112,13 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 						</div>
 					</div>
 					<!--=========================================================================== View Grade ===========================================================================-->
-					<div class="mx-auto w-100">
+					<div id="viewGradeDiv" class="mx-auto w-100">
 						<span class="h4 d-block my-3">View Grade</span>
 						<div class="card mt-3 p-3">
 							<span class="h5">Congratulations on completion of internship</span>
 							<span class="h6">Your Grade : </span>
 						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 	</body>
@@ -126,5 +130,9 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 			document.getElementById('hiddenField').innerHTML = currentId;
 
         }
+
+		var indemnStatus = '<?php echo $indemnityStatus; ?>';
+		console.log(indemnStatus);
+
     </script>
 </html>
