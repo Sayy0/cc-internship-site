@@ -3,6 +3,7 @@
 
 session_start();
 $errMsg = "";
+$succMsg = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -70,7 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['rpt3Status'] = $report3Status;
                 $_SESSION['finalStatus'] = $finalReportStatus;
                 $_SESSION['grade'] = $grade;
-                header("Location: internDashboard.php?success=Submitted Successfully");
+                $succMsg = "Submitted Successfully";
+                header("Location: internDashboard.php?success=" . urlencode($succMsg));
                 exit();
             } 
             else{

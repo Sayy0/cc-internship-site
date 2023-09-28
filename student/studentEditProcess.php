@@ -4,6 +4,7 @@
 
 session_start();
 $errMsg = "";
+$succMsg = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,10 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }    
 
     
-    $updateQuery = "UPDATE Student SET studentName = '$name', phoneNo = '$phoneNo', gender = '$gender', programme = '$programme' WHERE ";
+    $updateQuery = "UPDATE Student SET studentName = '$name', phoneNo = '$phoneNo', gender = '$gender', programme = '$programme' WHERE studentId = '$id'";
 
     if($conn->query($updateQuery) === TRUE){
-        header("Location: studentProfile.php?success=Submitted Successfully");
+        $succMsg = "Submitted Successfully";
+        header("Location: internDashboard.php?success=" . urlencode($succMsg));
         exit();
     }
     else{
