@@ -31,16 +31,23 @@ CREATE TABLE `Internship` (
   `internshipId` int(4) NOT NULL,
   `studentId` int(4) NOT NULL,
   `indemnityStatus` varchar(15) NOT NULL,
+  `indemnityFP` varchar(200) NOT NULL,
   `parentsAckStatus` varchar(15) NOT NULL,
+  `parentsAckFP` varchar(200) NOT NULL,
   `acceptanceLtrStatus` varchar(15) NOT NULL,
+  `acceptanceLtrFP` varchar(200) NOT NULL,
   `report1Status` varchar(15) NOT NULL,
+  `report1FP` varchar(200) NOT NULL,
   `report2Status` varchar(15) NOT NULL,
+  `report2FP` varchar(200) NOT NULL,
   `report3Status` varchar(15) NOT NULL,
-  `finalReportStatus` varchar(15) NOT NULL
+  `report3FP` varchar(200) NOT NULL,
+  `finalReportStatus` varchar(15) NOT NULL,
+  `finalReportFP` varchar(200) NOT NULL,
+  `grade` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `Staff`
 --
@@ -49,8 +56,7 @@ CREATE TABLE `Staff` (
   `staffId` int(4) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `picPath` varchar(100) NOT NULL
+  `staffPassword` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -63,11 +69,11 @@ CREATE TABLE `Student` (
   `studentId` int(4) NOT NULL,
   `email` varchar(50) NOT NULL,
   `studentName` varchar(50) NOT NULL,
-  `phoneNo` varchar(10) NOT NULL,
+  `phoneNo` varchar(20) NOT NULL,
   `gender` varchar(1) NOT NULL,
   `programme` varchar(3) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `picPath` varchar(100) DEFAULT NULL
+  `studentPassword` varchar(200) NOT NULL,
+  `picPath` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -101,7 +107,14 @@ ALTER TABLE `Student`
 --
 ALTER TABLE `Student`
   MODIFY `studentId` int(4) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+ALTER TABLE `Internship`
+  MODIFY `internshipId` int(4) NOT NULL AUTO_INCREMENT;
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

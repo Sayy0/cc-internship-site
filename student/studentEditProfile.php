@@ -18,24 +18,22 @@
 			<a href="./internDashboard.php" class="h4 text-decoration-none">Student Dashboard</a>
 			<div>
 				<a href="./studentProfile.php" class="mx-2 btn btn-primary">Profile</a>
-				<a href="../index.php" class="mx-2 btn btn-danger">Log Out</a>
+				<a href="../studentLogin.php" class="mx-2 btn btn-danger">Log Out</a>
 			</div>
 		</nav>
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span class="h4 d-block my-3">User Profile</span>
-                <form action="">
+                <form action="studentEditProcess.php" method="post" enctype="multipart/form-data">
                     <div class="card mt-3 p-3">
                         <div class="row">
+                            <!--
                             <div class="mb-4">
                                 <img class="w-25" src="./photos/profilepic.jpg" alt="">
                                 <input class="d-block" type="file" id="input_submitFile" name="filename" required>
                             </div>
-                            <div class="mb-4">
-                                <label class="d-block mb-1" for="tb_email">E-mail</label>
-                                <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" required />
-                            </div>
+-->
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_name">Name</label>
                                 <input class="d-block w-100 form-control" type="text" name="tb_name" id="tb_name" placeholder="Enter Name" value="Cry Cry Cry" required />
@@ -69,5 +67,63 @@
                 </form>
 			</div>
 		</div>
+	<?php
+
+		session_start();
+		$studentId = $_SESSION['userid'];
+
+		$email = "Unable to Load Data";
+		$name = "Unable to Load Data";
+		$phoneNo = "Unable to Load Data";
+		$gender = "Unable to Load Data";
+		$programme = "Unable to Load Data";
+		require("../sql/connectDB.php");
+
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}    
+
+		$getUserQuery = "SELECT * FROM Student WHERE studentId = '$studentId'";
+
+		$getUserResult = $conn->query($getUserQuery);
+		if($getUserResult->num_rows > 0){
+			$row = $getUserResult->fetch_assoc();
+			$email = $row["email"];
+			$name= $row["studentName"];
+			$phoneNo = $row["phoneNo"];
+			$gender = $row["gender"];
+			$programme = $row["programme"];
+		}
+		$conn->close();
+
+		$loadscript= "
+			document.getElementById('tb_name').value = '$name';
+			document.getElementById('tb_phoneNo').value = '$phoneNo';
+			for(var i = 0; i < document.getElementById('ddl_gender').options.length; i++){
+				var option = document.getElementById('ddl_gender').options[i];
+				if(option.value == '$gender'){
+					document.getElementById('ddl_gender').selectedIndex = i;
+					break;
+				}
+			}
+			for(var i = 0; i < document.getElementById('ddl_programme').options.length; i++){
+				var option = document.getElementById('ddl_programme').options[i];
+				if(option.value == '$programme'){
+					document.getElementById('ddl_programme').selectedIndex = i;
+					break;
+				}
+			}
+		";
+
+		echo "<script>$loadscript</script>";
+	?>
 	</body>
+    <script>
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+    </script>
 </html>
