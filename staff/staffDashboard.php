@@ -72,40 +72,40 @@
 
 									$studentQuery = "SELECT * FROM Student WHERE 'studentId' = '$studentId' ";	
 									$studentResult = $conn->query($studentQuery);
-									if($studentResult->num_rows>0){
+									if($studentResult->num_rows > 0){
 										$studrow = $studentResult->fetch_assoc();
-										$studentName = $row["studentName"];
+										$studentName = $studrow["studentName"];
 									}
 
 									echo "<tr>";
 									echo "<td>" . $studentId . "</td>";
 									echo "<td>" . $studentName . "</td>";
 									if($r1FP != "empty"){
-										echo "<td><a href='" . $r1FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r1FP . "' target='_blank' class='text-danger'>View File</a></td>";
 									}
 									else{
 										echo "<td>Not Submitted</td>";
 									}
 									if($r2FP != "empty"){
-										echo "<td><a href='" . $r2FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r2FP . "' target='_blank' class='text-danger'>View File</a></td>";
 									}
 									else{
 										echo "<td>Not Submitted</td>";
 									}
 									if($r3FP != "empty"){
-										echo "<td><a href='" . $r3FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r3FP . "' target='_blank' class='text-danger'>View File</a></td>";
 									}
 									else{
 										echo "<td>Not Submitted</td>";
 									}
 									if($frFP != "empty"){
-										echo "<td><a href='" . $frFP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $frFP . "' target='_blank' class='text-danger'>View File</a></td>";
 										if($grade == "empty"){
 										echo "
 											<td>
 												<form method='post' action='gradeProcess.php'>
 													<input type='text' id='tb_id' value='$internshipId' hidden/>
-													<select class='d-block w-100 form-select mb-2' requried name='ddl_grade' id='ddl_grade'>
+													<select class='d-block w-100 form-select mb-2' required name='ddl_grade' id='ddl_grade'>
 														<option value='A'>A</option>
 														<option value='A-'>A-</option>
 														<option value='B'>B</option>
@@ -141,34 +141,6 @@
 							$conn->close();
 						?>
 
-						<tr>
-							<td>2206976</td>
-							<td>Tan Wei Jian</td>
-							<td><a href="">View Report 1</a></td>
-							<td><a href="">View Report 2</a></td>
-							<td><a href="">View Report 3</a></td>
-							<td><a href="">View Final Report</a></td>
-							<td class="text-center"><span>A</span></td>
-						</tr>
-						<tr>
-							<td>2206952</td>
-							<td>Chung Chee You</td>
-							<td><a href="">View Report 1</a></td>
-							<td><span class="text-warning">Not submitted</span></td>
-							<td><span class="text-warning">Not submitted</span></td>
-							<td><span class="text-warning">Not submitted</span></td>
-							<td class="text-center">
-								<select class="d-block w-100 form-select mb-2" requried name="ddl_grade" id="ddl_grade">
-									<option value="A">A</option>
-									<option value="A-">A-</option>
-									<option value="B">B</option>
-									<option value="B">B-</option>
-									<option value="C">C</option>
-									<option value="C-">C-</option>
-									<option value="F">Fail</option>
-								</select>
-								<a class="btn btn-primary" href="">Grade</a></td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
