@@ -85,7 +85,7 @@ $grade = $_SESSION['grade'];
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
 					<div id="uploadMR1div" class="mx-auto w-100">
-						<form action="submiMr1.php" method="post" enctype="multipart/form-data">
+						<form action="submitMr1.php" method="post" enctype="multipart/form-data">
 							<span class="h4 d-block my-3">Submit Monthly Report 1</span>
 							<div class="card mt-3 p-3">
 								<div class="row justify-items-center my-3">
