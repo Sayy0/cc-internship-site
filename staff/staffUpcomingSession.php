@@ -19,8 +19,8 @@
 			<a href="./staffDashboard.php" class="h4 text-decoration-none">Staff Dashboard</a>
             <div class="">
                 <ul class="nav-bar-nav list-group list-group-horizontal list-unstyled">
-                    <li class="mx-2 nav-item"><a href="./staffDashboard.php" class="text-decoration-none text-light">Grading</a></li>
                     <li class="mx-2 nav-item"><a href="./staffUpcomingSession.php" class="text-decoration-none text-light">Check Submission Documents</a></li>
+                    <li class="mx-2 nav-item"><a href="./staffDashboard.php" class="text-decoration-none text-light">Grading</a></li>
                 </ul>
             </div>
 			<div>
