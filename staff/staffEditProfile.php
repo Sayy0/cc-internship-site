@@ -30,13 +30,15 @@
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span class="h4 d-block my-3">User Profile</span>
-                <form action="">
+                <form method="post" action="staffEditProcess.php">
                     <div class="card mt-3 p-3">
                         <div class="row">
+                            <!--
                             <div class="mb-4">
                                 <img class="w-25" src="./photos/profilepic.jpg" alt="">
                                 <input class="d-block" type="file" id="input_submitFile" name="filename" required>
                             </div>
+-->
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_email">E-mail</label>
                                 <input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" value="abc@email.com" required />
@@ -85,4 +87,18 @@
 		echo "<script>$loadscript</script>";
 	?>
 	</body>
+    <script>
+
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+        if (urlParams.has('success')) {
+            const errorMessage = decodeURIComponent(urlParams.get('success'));
+            alert(errorMessage);
+        }
+
+    </script>
 </html>

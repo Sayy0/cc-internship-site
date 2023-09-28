@@ -31,7 +31,7 @@
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
 				<span class="h4 d-block my-3">User Profile</span>
-                <form action="">
+                <form action="staffChangePwProcess.php" method="post">
                     <div class="card mt-3 p-3">
                         <div class="row">
                             <div class="mb-4 col">
