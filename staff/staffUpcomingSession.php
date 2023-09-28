@@ -19,8 +19,8 @@
 			<a href="./staffDashboard.php" class="h4 text-decoration-none">Staff Dashboard</a>
             <div class="">
                 <ul class="nav-bar-nav list-group list-group-horizontal list-unstyled">
-                    <li class="mx-2 nav-item"><a href="./staffDashboard.php" class="text-decoration-none text-light">Current Session</a></li>
-                    <li class="mx-2 nav-item"><a href="./staffUpcomingSession.php" class="text-decoration-none text-light">Upcoming Session</a></li>
+                    <li class="mx-2 nav-item"><a href="./staffDashboard.php" class="text-decoration-none text-light">Grading</a></li>
+                    <li class="mx-2 nav-item"><a href="./staffUpcomingSession.php" class="text-decoration-none text-light">Check Submission Documents</a></li>
                 </ul>
             </div>
 			<div>
@@ -32,7 +32,7 @@
 
 		<div class="content p-3">
 			<div class="w-75 mx-auto">
-                <span class="h3 d-block py-4">Upcoming Session</span>
+                <span class="h3 d-block py-4">Check Submission Documents</span>
 				<table class="table table-striped table-bordered">
 					<thead class="table-dark text-light">
 						<tr>
