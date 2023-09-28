@@ -143,7 +143,7 @@ $grade = $_SESSION['grade'];
 					<div id="viewGradeDiv" class="mx-auto w-100">
 						<span class="h4 d-block my-3">View Grade</span>
 						<div class="card mt-3 p-3">
-							<span class="h5">Congratulations on completion of internship</span>
+							<span id="span_gradeHeader" class="h5">Congratulations on completion of internship</span>
 							<span id="span_grade" class="h6">Your Grade : </span>
 						</div>
 					</div>
@@ -223,6 +223,7 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 				document.getElementById('viewGradeDiv').style.display = 'block';
+				document.getElementById('span_gradeHeader').innerHTML = "Grading is in process";
 				document.getElementById('span_grade').innerHTML = "Your Grade : Not Graded";
 			}
 		}
