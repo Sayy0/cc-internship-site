@@ -7,6 +7,7 @@ $errMsg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the registration form
     $mr1 = $_FILES["input_mr1"]; 
+    $internId= $_SESSION["internId"];
 
     $saveDir = "./documents/" . $internId . "/";
 
