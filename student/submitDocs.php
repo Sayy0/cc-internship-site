@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         move_uploaded_file($parentsForm["tmp_name"], $parentsFP) &&
         move_uploaded_file($companyLtr["tmp_name"], $companyFP)) {
 
-        $updateQuery = "UPDATE Internship SET indemnityStatus = 'pending', parentsAckStatus = 'pending', acceptanceLtrStatus = 'pending', indemnityFP = '$indemnFP', parentsAckFP = '$parentsFP', acceptanceLtrFP = '$companyFP' WHERE internshipId = $internid";
+        $updateQuery = "UPDATE Internship SET indemnityStatus = 'pending', parentsAckStatus = 'pending', acceptanceLtrStatus = 'pending', indemnityFP = '$indemnFP', parentsAckFP = '$parentsFP', acceptanceLtrFP = '$companyFP' WHERE internshipId = $internId";
 
         if($conn->query($updateQuery) === TRUE){
 
