@@ -37,7 +37,9 @@ $grade = $_SESSION['grade'];
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
-				<span id="contentHeading" class="h4 d-block my-3">Upload required documents</span>
+				<div id="contentHeading" >
+					<span class="h4 d-block my-3">Upload required documents</span>
+				</div>
 					<div id="pendingDiv" class="mx-auto w-100">
 						<div class="card mt-3 p-3 text-center">
 							<div class="mx-auto">
