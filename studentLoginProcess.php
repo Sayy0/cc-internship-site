@@ -26,10 +26,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
         if($dbPassword === $pw){
-            session_start();
-            $_SESSION['userid'] = $dbId;
-            header("Location: ./student/internDashboard.php");
-            exit();
+
+            $internQuery = "SELECT * FROM Internship WHERE studentid = '$dbId'";
+            $internResult = $conn->query($internQuery);
+            if($internResult->num_rows > 0){
+                $row = $internResult->fetch_assoc();
+                $indemnityStatus = $row["indemnityStatus"];
+                $parentsStatus = $row["parentsAckStatus"];
+                $acceptanceResult = $row["acceptanceLtrStatus"];
+                $report1Status = $row["report1Status"];
+                $report2Status = $row["report2Status"];
+                $report3Status = $row["report3Status"];
+                $finalReportStatus = $row["finalReportStatus"];
+
+                session_start();
+                $_SESSION['userid'] = $dbId;
+                $_SESSION['indemStatus'] = $indemnityStatus;
+                $_SESSION['parentsStatus'] = $parentsStatus;
+                $_SESSION['acceptanceStatus'] = $acceptanceStatus;
+                $_SESSION['rpt1Status'] = $report1Status;
+                $_SESSION['rpt2Status'] = $report2Status;
+                $_SESSION['rpt3Status'] = $report3Status;
+                $_SESSION['finalStatus'] = $finalReportStatus;
+                header("Location: ./student/internDashboard.php");
+                exit();
+            } 
+            else{
+                $errMsg = "Unable to create session.";
+                header("Location: studentLogin.php?error=" . urlencode($errMsg));
+                exit();
+            }
+
         }
         else{
             $errMsg = "Invalid email or password.";
