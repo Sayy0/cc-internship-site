@@ -46,7 +46,7 @@
 					</thead>
 					<tbody>
 						<?php 
-							require("./sql/connectDB.php");
+							require("../sql/connectDB.php");
 
 							if ($conn->connect_error) {
 								die("Connection failed: " . $conn->connect_error);
@@ -133,8 +133,12 @@
 								}
 
 							}
+							else{
+								echo "<tr><td colspan='7'>No Data Found</td></tr>";
+							}
 
 
+							$conn->close();
 						?>
 
 						<tr>
