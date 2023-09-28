@@ -78,27 +78,33 @@
 									echo "<td>" . $studentId . "</td>";
 									echo "<td>" . $studentName . "</td>";
 									if($indemnFP != "empty"){
-										echo "<td><a href='../student/" . $indemnFP . "' target='_blank' class='text-primary'>View File</a></td>";
+										echo "<td><a href='../student/$indemnFP' target='_blank' class='text-primary'>View File</a></td>";
 									}
 									else{
 										echo "<td class='text-danger'>Not Submitted</td>";
 									}
 									if($parentsFP != "empty"){
-										echo "<td><a href='../student/" . $parentsFP . "' target='_blank' class='text-primary'>View File</a></td>";
+										echo "<td><a href='../student/$parentsFP' target='_blank' class='text-primary'>View File</a></td>";
 									}
 									else{
 										echo "<td class='text-danger'>Not Submitted</td>";
 									}
 									if($acceptFP != "empty"){
-										echo "<td><a href='../student/" . $acceptFP . "' target='_blank' class='text-primary'>View File</a></td>";
-										echo "
-											<td>
-												<form method='post' action='acceptProcess.php'>
-													<input type='hidden' id='tb_id' name='tb_id' value='$internshipId' class='text-white' />
-													<input class='btn btn-success' type='submit' value='Accept'/></td>
-												</form>
-											</td>
-										";	
+										echo "<td><a href='../student/$acceptFP' target='_blank' class='text-primary'>View File</a></td>";
+										if($acceptStatus == "accepted"){
+
+											echo "<td><button disabled class='btn btn-outline-success'>Accepted</button></td>";
+										}
+										else{
+											echo "
+												<td>
+													<form method='post' action='acceptProcess.php'>
+														<input type='hidden' id='tb_id' name='tb_id' value='$internshipId' class='text-white' />
+														<input class='btn btn-success' type='submit' value='Accept'/></td>
+													</form>
+												</td>
+											";	
+										}
 									}
 									else{
 										echo "<td class='text-danger'>Not Submitted</td>";
