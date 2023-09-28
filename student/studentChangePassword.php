@@ -33,11 +33,11 @@
                             </div>
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_npw">New Password</label>
-                                <input oninput="checkPw()" class="d-block w-100 form-control" type="password" name="tb_npw" id="tb_npw" placeholder="New Password" required />
+                                <input class="d-block w-100 form-control" type="password" name="tb_npw" id="tb_npw" placeholder="New Password" required />
                             </div>
                             <div class="mb-4">
                                 <label class="d-block mb-1" for="tb_cpw">Confirm Password</label>
-                                <input oninput="checkPw()" class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
+                                <input class="d-block w-100 form-control" type="password" name="tb_cpw" id="tb_cpw" placeholder="Confirm Password" required />
 								<span class="text-danger" id='errorSpan' hidden>*Passwords do not match!</span>
                             </div>
                             <div class="">
@@ -57,20 +57,5 @@
             const errorMessage = decodeURIComponent(urlParams.get('error'));
             alert(errorMessage);
         }
-
-		function checkPw(){
-			var saveBtn = document.getElementById(saveBtn);
-			var newPw = document.getElementById(tb_npw);
-			var confirmPw = document.getElementById(tb_cpw);
-			var errorSpan = document.getElementById(errorSpan);
-			if(newPw.value != confirmPw.value){
-				errorSpan.hidden = false;
-				saveBtn.disabled = true;
-			}
-			else{
-				errorSpan.hidden = true;
-				saveBtn.disabled = false;
-			}
-		}
     </script>
 </html>
