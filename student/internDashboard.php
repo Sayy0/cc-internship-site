@@ -37,7 +37,7 @@ $grade = $_SESSION['grade'];
 		<!--=========================================================================== nav bar ===========================================================================-->
 		<div class="content p-3">
 			<div class="w-50 mx-auto">
-				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
+				<span id="contentHeading" class="h4 d-block my-3">Upload required documents</span>
 					<div id="pendingDiv" class="mx-auto w-100">
 						<div class="card mt-3 p-3 text-center">
 							<div class="mx-auto">
@@ -223,6 +223,7 @@ $grade = $_SESSION['grade'];
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 				document.getElementById('viewGradeDiv').style.display = 'block';
+				document.getElementById('contentHeading').style.display = 'none';
 				document.getElementById('span_gradeHeader').innerHTML = "Grading is in process";
 				document.getElementById('span_grade').innerHTML = "Your Grade : Not Graded";
 			}
