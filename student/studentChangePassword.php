@@ -42,7 +42,7 @@
                             </div>
                             <div class="">
                                 <a href="./studentProfile.php" class="btn btn-danger w-25">Cancel</a>
-                                <input id='saveBtn' type="submit" value="Save" class="btn btn-success w-25" disabled>
+                                <input id='saveBtn' type="submit" onchange="checkPw()" value="Save" class="btn btn-success w-25" disabled>
                             </div>
                         </div>
                     </div>
@@ -58,17 +58,19 @@
             alert(errorMessage);
         }
 
-		var saveBtn = document.getElementById(saveBtn);
-		var newPw = document.getElementById(tb_npw);
-		var confirmPw = document.getElementById(tb_cpw);
-		var errorSpan = document.getElementById(errorSpan);
-		if(newPw.value != confirmPw.value){
-			errorSpan.hidden = false;
-			saveBtn.disabled = false;
-		}
-		else{
-			erroSpan.hidden = true;
-			saveBtn.disabled = false;
+		function checkPw(){
+			var saveBtn = document.getElementById(saveBtn);
+			var newPw = document.getElementById(tb_npw);
+			var confirmPw = document.getElementById(tb_cpw);
+			var errorSpan = document.getElementById(errorSpan);
+			if(newPw.value != confirmPw.value){
+				errorSpan.hidden = false;
+				saveBtn.disabled = false;
+			}
+			else{
+				erroSpan.hidden = true;
+				saveBtn.disabled = false;
+			}
 		}
     </script>
 </html>
