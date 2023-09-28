@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ./staff/staffDashboard.php");
             exit();
                 $errMsg = "Unable to create session.";
-                header("Location: studentLogin.php?error=" . urlencode($errMsg));
+                header("Location: staffLogin.php?error=" . urlencode($errMsg));
                 exit();
         }
         else{
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else{
         $errMsg = "Invalid email or password.";
-        header("Location: studentLogin.php?error=" . urlencode($errMsg));
+        header("Location: staffLogin.php?error=" . urlencode($errMsg));
         exit();
     }
     $conn->close();
