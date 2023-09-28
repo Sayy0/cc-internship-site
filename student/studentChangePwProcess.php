@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($checkPwResult->num_rows > 0){
         $row = $checkPwResult->fetch_assoc();
         $dbPw = $row['studentPassword'];
-        if($oldPw == $dbPw){
+        if($oldPw != $dbPw){
             $errMsg= "Error: Incorrect old password";
             header("Location: studentChangePassword.php?error=" . urlencode($errMsg));
             exit();
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updateQuery = "UPDATE Student SET studentPassword = '$conPw' WHERE studentId = '$id'";
 
     if($conn->query($updateQuery) === TRUE){
-        $succMsg = "Submitted Successfully";
+        $succMsg = "Changed Successfully";
         header("Location: studentEditProfile.php?success=" . urlencode($succMsg));
         exit();
     }

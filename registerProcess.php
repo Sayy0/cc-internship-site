@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $programme = $_POST["ddl_programme"];
 
     $pw = substr(hash('sha256', $_POST["tb_pw"]), 0, 50); // Hash the password
+    $cpw = substr(hash('sha256', $_POST["tb_cpw"]), 0, 50); // Hash the password
 
     require("./sql/connectDB.php");
 
@@ -27,6 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: register.php?error=" . urlencode($errMsg));
         exit();
     }
+
+    if($pw != $cpw){
+        $errMsg= "Error: Passwords do not match!";
+        header("Location: studentChangePassword.php?error=" . urlencode($errMsg));
+        exit();
+    }
+
+
     else{
         $insertQuery = "INSERT INTO Student (email, studentName, phoneNo, gender, programme, studentPassword) VALUES ('$email', '$name', '$phoneNo', '$gender', '$programme', '$pw')";        
 
