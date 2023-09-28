@@ -81,25 +81,25 @@
 									echo "<td>" . $studentId . "</td>";
 									echo "<td>" . $studentName . "</td>";
 									if($r1FP != "empty"){
-										echo "<td><a href='../student/" . $r1FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r1FP . "' target='_blank' class='text-primary'>View File</a></td>";
 									}
 									else{
-										echo "<td>Not Submitted</td>";
+										echo "<td class='text-danger'>Not Submitted</td>";
 									}
 									if($r2FP != "empty"){
-										echo "<td><a href='../student/" . $r2FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r2FP . "' target='_blank' class='text-primary'>View File</a></td>";
 									}
 									else{
-										echo "<td>Not Submitted</td>";
+										echo "<td class='text-danger'>Not Submitted</td>";
 									}
 									if($r3FP != "empty"){
-										echo "<td><a href='../student/" . $r3FP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $r3FP . "' target='_blank' class='text-primary'>View File</a></td>";
 									}
 									else{
-										echo "<td>Not Submitted</td>";
+										echo "<td class='text-danger'>Not Submitted</td>";
 									}
 									if($frFP != "empty"){
-										echo "<td><a href='../student/" . $frFP . "' target='_blank' class='text-danger'>View File</a></td>";
+										echo "<td><a href='../student/" . $frFP . "' target='_blank' class='text-primary'>View File</a></td>";
 										if($grade == "empty"){
 										echo "
 											<td>
@@ -124,7 +124,7 @@
 										}
 									}
 									else{
-										echo "<td>Not Submitted</td>";
+										echo "<td class='text-danger'>Not Submitted</td>";
 										echo "<td class='text-center'><span>-</span></td>";
 									}
 
