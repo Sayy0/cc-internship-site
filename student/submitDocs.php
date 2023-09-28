@@ -4,6 +4,8 @@
 session_start();
 $errMsg = "";
 
+phpinfo();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input from the registration form
     $indemnForm = $_FILES["input_indemnForm"]; 
