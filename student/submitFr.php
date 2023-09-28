@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (move_uploaded_file($fp["tmp_name"], $fpFP)) {
 
-        $updateQuery = "UPDATE Internship SET report3Status = 'submitted', report3FP = '$fpFP' WHERE internshipId = $internId";
+        $updateQuery = "UPDATE Internship SET finalReportStatus = 'submitted', finalReportFP = '$fpFP' WHERE internshipId = $internId";
 
         if($conn->query($updateQuery) === TRUE){
 
