@@ -22,6 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }    
 
+    if($newPw != $conPw){
+        $errMsg= "Error: Incorrect old password";
+        header("Location: studentChangePassword.php?error=" . urlencode($errMsg));
+        exit();
+    }
+
     $checkPwQuery = "SELECT * FROM Student WHERE studentId = '" . $id. "'";
     $checkPwResult = $conn->query($checkPwQuery);
     if($checkPwResult->num_rows > 0){
