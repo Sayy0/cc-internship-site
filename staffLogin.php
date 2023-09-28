@@ -23,7 +23,7 @@ session_destroy();
 				</div>
 				<div class="card p-5 mx-auto w-50">
 					<span class="h4">Staff Login</span>
-					<form class="d-block m-3" action="./staff/staffDashboard.php">
+					<form class="d-block m-3" method="post" action="./staffLoginProcess.php">
 						<div class="mb-4">
 							<label class="d-block mb-1" for="tb_email">E-mail</label>
 							<input class="d-block w-100 form-control" type="text" name="tb_email" id="tb_email" placeholder="Enter Email" required />
@@ -43,4 +43,12 @@ session_destroy();
 			</div>
 		</div>
 	</body>
+    <script>
+        // Check if the "error" parameter exists in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const errorMessage = decodeURIComponent(urlParams.get('error'));
+            alert(errorMessage);
+        }
+    </script>
 </html>
