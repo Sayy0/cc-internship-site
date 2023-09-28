@@ -47,7 +47,7 @@ $grade = $_SESSION['grade'];
 					</div>
 					<!--=========================================================================== Required docs ===========================================================================-->
 					<div id="uploadDocsDiv" class="mx-auto w-100">
-						<form action="submitDocs.php" method="post">
+						<form action="submitDocs.php" method="post" enctype="multipart/form-data">
 
 							<div class="card">
 
