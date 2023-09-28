@@ -34,7 +34,7 @@ echo($indemnityStatus);
 				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
 				<div class="card mt-3 p-3">
 					<!--=========================================================================== MONTHLY REPORT 1 ===========================================================================-->
-					<div id="uploadMR1div" class="mx-auto">
+					<div id="uploadMR1div" class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 1</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -44,7 +44,7 @@ echo($indemnityStatus);
 						</div>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 2 ===========================================================================-->
-					<div class="mx-auto">
+					<div class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 2</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -54,7 +54,7 @@ echo($indemnityStatus);
 						</div>
 					</div>
 					<!--=========================================================================== MONTHLY REPORT 3 ===========================================================================-->
-					<div class="mx-auto">
+					<div class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Monthly Report 3</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -64,7 +64,7 @@ echo($indemnityStatus);
 						</div>
 					</div>
 					<!--=========================================================================== FNAL REPORT ===========================================================================-->
-					<div class="mx-auto">
+					<div class="mx-auto w-100">
 						<span class="h4 d-block my-3">Submit Final Report</span>
 						<div class="card mt-3 p-3">
 							<form action="">
@@ -73,8 +73,8 @@ echo($indemnityStatus);
 							</form>	
 						</div>
 					</div>
-					<!--=========================================================================== FNAL REPORT ===========================================================================-->
-					<div class="mx-auto">
+					<!--=========================================================================== View Grade ===========================================================================-->
+					<div class="mx-auto w-100">
 						<span class="h4 d-block my-3">View Grade</span>
 						<div class="card mt-3 p-3">
 							<span class="h5">Congratulations on completion of internship</span>
