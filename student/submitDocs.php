@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mkdir($saveDir, 0777, true);
     }
 
-    require("./sql/connectDB.php");
+    require("../sql/connectDB.php");
 
 
     if ($conn->connect_error) {
