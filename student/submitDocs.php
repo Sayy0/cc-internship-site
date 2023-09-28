@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $saveDir = "documents/" . $internId . "/";
 
     if(!is_dir($saveDir)){
-        mkdir($saveDir, 777, true);
+        mkdir($saveDir, 0777, true);
     }
 
     require("./sql/connectDB.php");
@@ -27,6 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $indemnFP = $saveDir . basename($internId . "_indemnityForm.pdf");
     $parentsFP = $saveDir . basename($internId . "_parentsAcknowledgementForm.pdf");
     $companyFP = $saveDir . basename($internId . "_companyAcceptanceLetter.pdf");
+
+    if (file_exists($indemnFP)) {
+        unlink($indemnFP); // Delete the existing file
+    }
+    if (file_exists($parentsFP)) {
+        unlink($parentsFP); // Delete the existing file
+    }
+    if (file_exists($companyFP)) {
+        unlink($companyFP); // Delete the existing file
+    }
 
     if (move_uploaded_file($indemnForm["tmp_name"], $indemnFP) &&
         move_uploaded_file($parentsForm["tmp_name"], $parentsFP) &&
@@ -70,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
         else{
-            $errMsg= "Error: Unable to update database";
+            $errMsg= "Error: Unable to update database" . $conn->error;
             header("Location: internDashboard.php?error=" . urlencode($errMsg));
             exit();
         }
