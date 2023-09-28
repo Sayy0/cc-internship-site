@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($conn->query($updateQuery) === TRUE){
         $succMsg = "Submitted Successfully";
-        header("Location: internDashboard.php?success=" . urlencode($succMsg));
+        header("Location: studentProfile.php?success=" . urlencode($succMsg));
         exit();
     }
     else{
