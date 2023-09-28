@@ -156,14 +156,14 @@ $grade = $_SESSION['grade'];
 
 		if(grade == "empty"){
 			document.getElementById('viewGradeDiv').style.display = 'none';
-			if(indemnStatus == "empty" ||parentsStatus == "empty" || acceptanceStatus == "empty"){
+			if(indemnStatus == "empty" || parentsStatus == "empty" || acceptanceStatus == "empty"){
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
 				document.getElementById('uploadFRdiv').style.display = 'none';
 				document.getElementById('pendingDiv').style.display = 'none';
 			}
-			if(indemnStatus == "pending" ||parentsStatus == "pending" || acceptanceStatus == "pending"){
+			else if(indemnStatus == "pending" ||parentsStatus == "pending" || acceptanceStatus == "pending"){
 				document.getElementById('uploadMR1div').style.display = 'none';
 				document.getElementById('uploadMR2div').style.display = 'none';
 				document.getElementById('uploadMR3div').style.display = 'none';
