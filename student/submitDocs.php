@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $companyLtr = $_FILES["input_companyLtr"];
     $internId= $_SESSION["internId"];
 
-    $saveDir = "documents/" . $internId . "/";
+    $saveDir = "./documents/" . $internId . "/";
 
     if(!is_dir($saveDir)){
         mkdir($saveDir, 0777, true);
@@ -60,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $finalReportStatus = $row["finalReportStatus"];
                 $grade = $row["grade"];
 
-                $_SESSION['userid'] = $dbId;
                 $_SESSION['internId'] = $internId; 
                 $_SESSION['indemnityStatus'] = $indemnityStatus;
                 $_SESSION['parentsStatus'] = $parentsStatus;
