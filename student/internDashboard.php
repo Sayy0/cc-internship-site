@@ -34,7 +34,7 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 			<div class="w-50 mx-auto">
 				<span id="test3" class="h4 d-block my-3">Upload required documents</span>
 					<!--=========================================================================== Required docs ===========================================================================-->
-					<div id="uploadMR1div" class="mx-auto w-100">
+					<div id="uploadDocsDiv" class="mx-auto w-100">
 						<form action="" method="post">
 
 						<div class="card">
@@ -139,7 +139,8 @@ $acceptanceStatus = $_SESSION['acceptanceStatus'];
 			document.getElementById('uploadMR1div').style.display = 'none';
 			document.getElementById('uploadMR2div').style.display = 'none';
 			document.getElementById('uploadMR3div').style.display = 'none';
-
+			document.getElementById('uploadFRdiv').style.display = 'none';
+			document.getElementById('viewGradeDiv').style.display = 'none';
 		}
 
     </script>
